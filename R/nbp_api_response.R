@@ -13,6 +13,7 @@ is_nbp_api_response <- function(x) {
   inherits(x, "nbp_api_response")
 }
 
+#' @export
 print.nbp_api_response <- function(x, ...) {
   cat(sprintf("%s\n", x))
 }

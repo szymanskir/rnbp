@@ -14,3 +14,4 @@ Imports: curl, httr, jsonlite
 Suggests: 
     covr,
     testthat (>= 2.1.0)
+RoxygenNote: 6.1.1
