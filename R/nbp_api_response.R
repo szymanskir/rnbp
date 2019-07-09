@@ -1,5 +1,12 @@
-create_nbp_api_response <- function(x) {
-
+create_nbp_api_response <- function(parsed_content, url, response) {
+  structure(
+    list(
+      content = parsed_content,
+      path = response$url,
+      response = response
+    ),
+    class = "nbp_api_response"
+  )
 }
 
 #' Checks whether the given object is of the class
@@ -15,5 +22,9 @@ is_nbp_api_response <- function(x) {
 
 #' @export
 print.nbp_api_response <- function(x, ...) {
-  cat(sprintf("%s\n", x))
+  cat("--- NBP API RESPONSE ---\n")
+  cat(sprintf("request url: %s\n", x$path))
+  cat(sprintf("status code: %s\n", x$response$status_code))
+  cat("--- CONTENT ---\n")
+  str(x$content)
 }
