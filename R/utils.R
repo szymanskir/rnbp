@@ -1,5 +1,5 @@
-assert <- function (expr, error) {
-  if (!expr) {
-   stop(error, call. = FALSE)
-  }
+assert <- function(expr, error) {
+    if (!expr) {
+        stop(error, call. = FALSE)
+    }
 }

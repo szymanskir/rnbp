@@ -1,0 +1,36 @@
+[
+  {
+    "table": "A",
+    "no": "130/A/NBP/2019",
+    "effectiveDate": "2019-07-08",
+    "rates": [
+      {
+        "currency": "bat (Tajlandia)",
+        "code": "THB",
+        "mid": 0.1231
+      },
+      {
+        "currency": "SDR (MFW)",
+        "code": "XDR",
+        "mid": 5.2257
+      }
+    ]
+  },
+  {
+    "table": "A",
+    "no": "131/A/NBP/2019",
+    "effectiveDate": "2019-07-09",
+    "rates": [
+      {
+        "currency": "bat (Tajlandia)",
+        "code": "THB",
+        "mid": 0.1235
+      },
+      {
+        "currency": "SDR (MFW)",
+        "code": "XDR",
+        "mid": 5.2509
+      }
+    ]
+  }
+]
