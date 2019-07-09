@@ -19,5 +19,5 @@ print.nbp_api_response <- function(x, ...) {
     cat(sprintf("request url: %s\n", x$path))
     cat(sprintf("status code: %s\n", x$response$status_code))
     cat("--- CONTENT ---\n")
-    str(x$content)
+    utils::str(x$content)
 }

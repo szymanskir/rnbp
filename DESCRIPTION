@@ -10,7 +10,7 @@ Description: Use the <http://api.nbp.pl/> API through R.
 License: GPL-3 + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Imports: curl, httr, jsonlite
+Imports: curl, httr, jsonlite, utils
 Suggests: 
     covr,
     httptest,
