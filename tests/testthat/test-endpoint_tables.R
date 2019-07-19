@@ -82,24 +82,6 @@ with_mock_api({
     expect_equal(nbp_api_response$content$rates, expected_rates)
   })
 
-  test_that("Todays exchange rate table is fetched correctly", {
-    nbp_api_response <- get_todays_exchangerate_table("a")
-    expected_rates <- list(
-      data.frame(
-        currency = c("bat (Tajlandia)", "SDR (MFW)"),
-        code = c("THB", "XDR"),
-        mid = c(0.1235, 5.2509),
-        stringsAsFactors = FALSE
-      )
-    )
-
-    expect_equal(class(nbp_api_response), "nbp_api_response")
-    expect_equal(nbp_api_response$content$table, "A")
-    expect_equal(nbp_api_response$content$no, "131/A/NBP/2019")
-    expect_equal(nbp_api_response$content$effectiveDate, "2019-07-09")
-    expect_equal(nbp_api_response$content$rates, expected_rates)
-  })
-
   test_that("Todays exchange rate table no data found error is handled properly", {
     # The only reason why table b is fetched is because we need a separate
     # file for httptest to contain an http response with the desired error
