@@ -1,0 +1,17 @@
+{
+  "table": "A",
+  "currency": "euro",
+  "code": "EUR",
+  "rates": [
+    {
+      "no": "138/A/NBP/2019",
+      "effectiveDate": "2019-07-18",
+      "mid": 4.2635
+    },
+    {
+      "no": "139/A/NBP/2019",
+      "effectiveDate": "2019-07-19",
+      "mid": 4.2592
+    }
+  ]
+}
