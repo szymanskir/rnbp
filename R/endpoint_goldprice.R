@@ -8,7 +8,7 @@
 }
 
 get_current_goldprice <- function() {
-  request_url <- .goldprice_base_url()
+  request_url <- create_request(base_url = .goldprice_base_url())
   .send_golprice_endpoint_request(request_url)
 }
 
