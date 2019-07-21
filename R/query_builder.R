@@ -9,11 +9,11 @@
 #' @return request url composed of the given base url and
 #' specified path parts
 #'
-create_request <- function(base_url, path_parts) {
+create_request <- function(base_url, path_parts = NULL) {
     for (path_part in path_parts) {
         base_url <- add_path_part(base_url, path_part)
     }
-    
+
     add_json_format(base_url)
 }
 
