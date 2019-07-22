@@ -101,7 +101,7 @@ get_todays_goldprice <- function() {
 #'
 #' @details As gold prices are not published on the weekends
 #' fetching values from a weekend date will result in a 404
-#' error. In those cases the function returns an error with ann
+#' error. In those cases the function returns an error with an
 #' appropriate message.
 #'
 #' @param date date from which the gold price should

@@ -4,7 +4,7 @@
     add_path_part(nbp_api_base_url(), "exchangerates/tables")
 }
 
-#' Sends a request and parses the table endpoint response.
+#' Sends a request and parses the tables endpoint response.
 #'
 #' @param request_url url to which the request should be sent.
 #'
@@ -113,7 +113,7 @@ get_todays_exchangerate_table <- function(table) {
 #'
 #' @details As exchange rate tables are not published on the weekends
 #' fetching values from a weekend date will result in a 404
-#' error. In those cases the function returns an error with ann
+#' error. In those cases the function returns an error with an
 #' appropriate message.
 #'
 #' @param table specifies which table should be fetched.
@@ -167,7 +167,7 @@ get_exchangerate_table_from <- function(table, date) {
 #' }
 #'
 #' @return nbp_api_response object containing the exchange rates
-#' from the specified interval.
+#' tables from the specified interval.
 #'
 #' @seealso \url{http://api.nbp.pl/#kursyWalut}
 #' @family tables
