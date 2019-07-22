@@ -10,13 +10,13 @@ get_todays_exchangerate_table(table)
 \item{table}{specifies which table should be fetched.}
 }
 \value{
-nbp_api_response object containing todays exchange rate table.
+nbp_api_response object containing today's exchange rate table.
 }
 \description{
 Retrieves the exchange rate table that was published today.
 }
 \details{
-If todays data is not available the API will
+If today's data is not available the API will
 return a 404 Not found error. In that case the function will
 return an error with an appropriate message.
 }

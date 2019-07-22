@@ -64,7 +64,7 @@ with_mock_api({
     )
   })
 
-  test_that("Todays exchange rate table is fetched correctly", {
+  test_that("Today's exchange rate table is fetched correctly", {
     nbp_api_response <- get_todays_exchangerate_table("a")
     expected_rates <- list(
       data.frame(
@@ -82,7 +82,7 @@ with_mock_api({
     expect_equal(nbp_api_response$content$rates, expected_rates)
   })
 
-  test_that("Todays exchange rate table no data found error is handled properly", {
+  test_that("Today's exchange rate table no data found error is handled properly", {
     # The only reason why table b is fetched is because we need a separate
     # file for httptest to contain an http response with the desired error
     expect_error(

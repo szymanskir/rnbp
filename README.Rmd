@@ -1,29 +1,34 @@
+---
+output: github_document
+---
 
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
 # rnbp
 
-[![Travis build
-status](https://travis-ci.com/szymanskir/rnbp.svg?branch=master)](https://travis-ci.org/szymanskir/rnbp)
-[![AppVeyor build
-status](https://ci.appveyor.com/api/projects/status/github/szymanskir/rnbp?branch=master&svg=true)](https://ci.appveyor.com/project/szymanskir/rnbp)
-[![Codecov test
-coverage](https://codecov.io/gh/szymanskir/rnbp/branch/master/graph/badge.svg)](https://codecov.io/gh/szymanskir/rnbp?branch=master)
+[![Travis build status](https://travis-ci.com/szymanskir/rnbp.svg?branch=master)](https://travis-ci.org/szymanskir/rnbp)
+[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/szymanskir/rnbp?branch=master&svg=true)](https://ci.appveyor.com/project/szymanskir/rnbp)
+[![Codecov test coverage](https://codecov.io/gh/szymanskir/rnbp/branch/master/graph/badge.svg)](https://codecov.io/gh/szymanskir/rnbp?branch=master)
 
-The rnbp package is an R wrapper for the National Bank of Poland API:
-<http://api.nbp.pl/>
+The rnbp package is an R wrapper for the National Bank of Poland API: http://api.nbp.pl/
 
 ## Installation
 
-You can install the the development version of rnbp from
-[GitHub](https://github.com/) with:
+You can install the the development version of rnbp from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
 devtools::install_github("szymanskir/rnbp")
 ```
-
 ## Retrieve the currently effective exchange rate table
-
-``` r
+```{r exchangerate_table, fig.height = 4, fig.width = 8}
 library(rnbp)
 library(ggplot2)
 
@@ -37,11 +42,8 @@ ggplot(current_exchangerate_table, aes(x = code, y = bid, fill = code)) +
   geom_bar(stat = "identity")
 ```
 
-<img src="man/figures/README-exchangerate_table-1.png" width="100%" />
-
-## Retrieve exchange rates for specific currencies
-
-``` r
+## Retrieve exchange rates for specific currencies 
+```{r rates, fig.height = 4, fig.width = 8}
 ## Retrieve last 20 exchange rates for euros
 euros_response <- get_last_n_exchangerates("A", "EUR", 20)
 
@@ -62,11 +64,8 @@ ggplot(currency_data, aes(x = effectiveDate, y = mid, col = code)) +
   geom_point()
 ```
 
-<img src="man/figures/README-rates-1.png" width="100%" />
-
 ## Retrieve gold prices
-
-``` r
+```{r gold_price, fig.height = 4, fig.width = 8, warning = FALSE}
 current_date <- Sys.Date()
 response <- get_goldprice_from_interval(current_date - 90, current_date)
 
@@ -75,5 +74,3 @@ ggplot(response$content, aes(x = data, y = cena)) +
   geom_line() +
   geom_smooth(method = "loess", formula = y ~ x)
 ```
-
-<img src="man/figures/README-gold_price-1.png" width="100%" />

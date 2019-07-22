@@ -23,7 +23,7 @@ with_mock_api({
     expect_equal(nbp_api_response$content$cena, c(172.46, 172.86))
   })
 
-  test_that("Todays gold price is fetched correctly", {
+  test_that("Today's gold price is fetched correctly", {
     nbp_api_response <- get_todays_goldprice()
 
     expect_equal(nbp_api_response$content$data, as.Date("2019-07-22"))

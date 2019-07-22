@@ -1,0 +1,96 @@
+---
+title: "rnbp"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{rnbp}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup, include = FALSE}
+library(rnbp)
+```
+
+## Intro
+The National Bank of Poland (NBP) is the central bank of Poland responsible for issuing the polish currency, the złoty. NBP exposes a public API providing data regarding current and previous exchange rates and gold prices. The goal of the *rnbp* package is to provide access to the API from R. 
+
+The goal of this document is to present the functionalities of the package along with examples on how the retrieved data can be used. All of the endpoints expose the same set of of functionalities:
+
+* retrieval of the currently effective data
+* retrieval of data that was published today
+* retrieval of the last N records
+* retrieval of data from a specific date
+* retrieval of data from a specific time interval
+
+## Exchange rate tables
+The NBP API exposes endpoints for retrieving exchange rate tables. At the time of writing this document three tables are available:
+
+* table A - contains the average exchange rate of foreign currencies
+* table B - contains the average exchange rate of foreign currencies
+* table C - contains the bid and ask prices of foreign currencies
+
+An example of retrieving the currently effective exchange rate table is presented below:
+```{r, fig.fullwidth = TRUE}
+library(ggplot2)
+library(rnbp)
+
+## Retrieve current C exchange rate table
+response <- get_current_exchangerate_table("C")
+
+## Retrieve content from the response
+current_exchangerate_table <- response$content$rates[[1]]
+
+knitr::kable(current_exchangerate_table)
+```
+
+This data can be then easily used for plotting:
+
+```{r, fig.height = 4, fig.width = 8}
+ggplot(current_exchangerate_table, aes(x = code, y = bid, fill = code)) + 
+  geom_bar(stat = "identity")
+```
+
+## Exchange rates 
+The API exposes endpoints for fetching exchange rates for specific currencies. An example of fetching the last 20 exchange rates of euros and dollars is presented bellow:
+
+```{r, fig.height = 4, fig.width = 8}
+## Retrieve last 20 exchange rates for euros
+euros_response <- get_last_n_exchangerates("A", "EUR", 20)
+
+## Retrieve last 20 exchange rates for euros
+dollars_response <- get_last_n_exchangerates("A", "USD", 20)
+
+## Retrieve rates data
+euros_data <- euros_response$content$rates
+dollars_data <- dollars_response$content$rates
+
+## Add currency code columns
+euros_data$code <- euros_response$content$code
+dollars_data$code <- dollars_response$content$code
+currency_data <- rbind(euros_data, dollars_data)
+
+ggplot(currency_data, aes(x = effectiveDate, y = mid, col = code)) +
+  geom_line() + 
+  geom_point()
+```
+
+## Gold prices
+The API also exposes endpoints providing information regarding the gold prices calculated by the National Bank of Poland. An example of retrieving gold prices from the last 90 days is presented below:
+
+
+```{r, fig.height = 4, fig.width = 8, warning = FALSE}
+current_date <- Sys.Date()
+response <- get_goldprice_from_interval(current_date - 90, current_date)
+
+ggplot(response$content, aes(x = data, y = cena)) + 
+  geom_point() +
+  geom_line() +
+  geom_smooth()
+```

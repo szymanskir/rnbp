@@ -14,13 +14,13 @@ rate should be fetched.}
 exchange rate should be fetched.}
 }
 \value{
-nbp_api_response object containing todays exchange rate.
+nbp_api_response object containing today's exchange rate.
 }
 \description{
 Retrieves the exchange rate that was published today.
 }
 \details{
-If todays data is not available the API will
+If today's data is not available the API will
 return a 404 Not found error. In that case the function will
 return an error with an appropriate message.
 }
