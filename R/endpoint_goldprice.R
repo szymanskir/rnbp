@@ -13,6 +13,8 @@ get_current_goldprice <- function() {
 }
 
 get_last_n_goldprices <- function(n) {
+  assert_count(n)
+
   request_url <- create_request(base_url = .goldprice_base_url(),
                                 path_parts = c("last", n))
   .send_golprice_endpoint_request(request_url)
@@ -25,12 +27,16 @@ get_todays_goldprice <- function() {
 }
 
 get_goldprice_from <- function(date) {
+  assert_date(date)
+
   request_url <- create_request(base_url = .goldprice_base_url(),
                                 path_parts = as.character(date))
   .send_golprice_endpoint_request(request_url)
 }
 
 get_goldprice_from_interval <- function(from, to) {
+  assert_interval(from, to)
+
   request_url <- create_request(base_url = .goldprice_base_url(),
                                 path_parts = c(as.character(from),
                                                as.character(to)))
