@@ -2,7 +2,7 @@
 # rnbp
 
 [![Travis build
-status](https://travis-ci.com/szymanskir/rnbp.svg?branch=master)](https://travis-ci.org/szymanskir/rnbp)
+status](https://travis-ci.com/szymanskir/rnbp.svg?branch=master)](https://travis-ci.com/szymanskir/rnbp?branch=master)
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/szymanskir/rnbp?branch=master&svg=true)](https://ci.appveyor.com/project/szymanskir/rnbp)
 [![Codecov test
