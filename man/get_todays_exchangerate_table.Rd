@@ -22,7 +22,7 @@ return an error with an appropriate message.
 }
 \examples{
 
-\donttest{
+\dontrun{
 ## Fetch todays A exchange rate table
 response <- get_todays_exchangerate_table("A")
 

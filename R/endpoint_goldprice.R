@@ -77,7 +77,7 @@ get_last_n_goldprices <- function(n) {
 #'
 #' @examples
 #'
-#' \donttest{
+#' \dontrun{
 #' ## Fetch todays gold price
 #' response <- get_todays_goldprice()
 #'
@@ -109,7 +109,7 @@ get_todays_goldprice <- function() {
 #'
 #' @examples
 #'
-#' \donttest{
+#' \dontrun{
 #' ## Fetch the gold price from a week ago
 #' response <- get_goldprice_from(Sys.Date() - 7)
 #'

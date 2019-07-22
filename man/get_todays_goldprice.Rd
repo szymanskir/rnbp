@@ -19,7 +19,7 @@ return an error with an appropriate message.
 }
 \examples{
 
-\donttest{
+\dontrun{
 ## Fetch todays gold price
 response <- get_todays_goldprice()
 
