@@ -1,7 +1,6 @@
 .parse_json <- function(response) {
-    if (httr::http_type(response) != "application/json") {
-        stop("The given response is not of type json", call. = FALSE)
-    }
+    assert(httr::http_type(response) == "application/json",
+           "The given response is not of type json")
 
     content <- httr::content(response, "text")
     jsonlite::fromJSON(content)
