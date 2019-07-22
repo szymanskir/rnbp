@@ -21,7 +21,7 @@ with_mock_api({
     expect_equal(class(nbp_api_response), "nbp_api_response")
     expect_equal(nbp_api_response$content$table, "A")
     expect_equal(nbp_api_response$content$no, "131/A/NBP/2019")
-    expect_equal(nbp_api_response$content$effectiveDate, "2019-07-09")
+    expect_equal(nbp_api_response$content$effectiveDate, as.Date("2019-07-09"))
     expect_equal(nbp_api_response$content$rates, expected_rates)
   })
 
@@ -53,7 +53,7 @@ with_mock_api({
     expect_equal(class(nbp_api_response), "nbp_api_response")
     expect_equal(nbp_api_response$content$table, c("A", "A"))
     expect_equal(nbp_api_response$content$no, c("130/A/NBP/2019", "131/A/NBP/2019"))
-    expect_equal(nbp_api_response$content$effectiveDate, c("2019-07-08", "2019-07-09"))
+    expect_equal(nbp_api_response$content$effectiveDate, as.Date(c("2019-07-08", "2019-07-09")))
     expect_equal(nbp_api_response$content$rates, expected_rates)
   })
 
@@ -78,7 +78,7 @@ with_mock_api({
     expect_equal(class(nbp_api_response), "nbp_api_response")
     expect_equal(nbp_api_response$content$table, "A")
     expect_equal(nbp_api_response$content$no, "131/A/NBP/2019")
-    expect_equal(nbp_api_response$content$effectiveDate, "2019-07-09")
+    expect_equal(nbp_api_response$content$effectiveDate, as.Date("2019-07-09"))
     expect_equal(nbp_api_response$content$rates, expected_rates)
   })
 
@@ -106,7 +106,7 @@ with_mock_api({
     expect_equal(class(nbp_api_response), "nbp_api_response")
     expect_equal(nbp_api_response$content$table, "A")
     expect_equal(nbp_api_response$content$no, "127/A/NBP/2019")
-    expect_equal(nbp_api_response$content$effectiveDate, "2019-07-03")
+    expect_equal(nbp_api_response$content$effectiveDate, as.Date("2019-07-03"))
     expect_equal(nbp_api_response$content$rates, expected_rates)
   })
 
@@ -131,7 +131,7 @@ with_mock_api({
     expect_equal(class(nbp_api_response), "nbp_api_response")
     expect_equal(nbp_api_response$content$table, c("A", "A"))
     expect_equal(nbp_api_response$content$no, c("130/A/NBP/2019", "131/A/NBP/2019"))
-    expect_equal(nbp_api_response$content$effectiveDate, c("2019-07-08", "2019-07-09"))
+    expect_equal(nbp_api_response$content$effectiveDate, as.Date(c("2019-07-08", "2019-07-09")))
     expect_equal(nbp_api_response$content$rates, expected_rates)
   })
 

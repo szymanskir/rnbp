@@ -4,7 +4,7 @@
 
 .send_golprice_endpoint_request <- function(request_url) {
     response <- send_get_request(url = request_url)
-    parse_rates_endpoint_response(response)
+    parse_goldprice_endpoint_response(response)
 }
 
 get_current_goldprice <- function() {
