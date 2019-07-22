@@ -8,10 +8,8 @@
 }
 
 get_exchangerate <- function(table, currency_code) {
-    assert(is.character(table),
-           "The table parameter should be a character.")
-    assert(is.character(currency_code),
-           "The currency_code parameter should be a character.")
+    assert_character(table)
+    assert_character(currency_code)
 
     request_url <- create_request(base_url = .rates_base_url(),
                                   path_parts = c(table, currency_code))
@@ -20,10 +18,9 @@ get_exchangerate <- function(table, currency_code) {
 }
 
 get_last_n_exchangerates <- function(table, currency_code, n) {
-    assert(is.character(table),
-           "The table parameter should be a character.")
-    assert(is.character(currency_code),
-           "The currency_code parameter should be a character.")
+    assert_character(table)
+    assert_character(currency_code)
+    assert_count(n)
 
     request_url <- create_request(base_url = .rates_base_url(),
                                   path_parts = c(table, currency_code, "last", n))
@@ -32,6 +29,9 @@ get_last_n_exchangerates <- function(table, currency_code, n) {
 }
 
 get_todays_exchangerate <- function(table, currency_code) {
+    assert_character(table)
+    assert_character(currency_code)
+
     assert(is.character(table),
            "The table parameter should be a character.")
     assert(is.character(currency_code),
@@ -44,10 +44,9 @@ get_todays_exchangerate <- function(table, currency_code) {
 }
 
 get_exchangerate_from <- function(table, currency_code, date) {
-    assert(is.character(table),
-           "The table parameter should be a character.")
-    assert(is.character(currency_code),
-           "The currency_code parameter should be a character.")
+    assert_character(table)
+    assert_character(currency_code)
+    assert_date(date)
 
     request_url <- create_request(base_url = .rates_base_url(),
                                   path_parts = c(table, currency_code, as.character(date)))
@@ -56,10 +55,9 @@ get_exchangerate_from <- function(table, currency_code, date) {
 }
 
 get_exchangerate_from_interval <- function(table, currency_code, from, to) {
-    assert(is.character(table),
-           "The table parameter should be a character.")
-    assert(is.character(currency_code),
-           "The currency_code parameter should be a character.")
+    assert_character(table)
+    assert_character(currency_code)
+    assert_interval(from, to)
 
     request_url <- create_request(base_url = .rates_base_url(),
                                   path_parts = c(table,

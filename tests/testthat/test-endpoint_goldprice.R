@@ -24,7 +24,10 @@ with_mock_api({
   })
 
   test_that("Todays gold price is fetched correctly", {
-    skip("At the moment of writing the unit test no test was available")
+    nbp_api_response <- get_todays_goldprice()
+
+    expect_equal(nbp_api_response$content$data, "2019-07-22")
+    expect_equal(nbp_api_response$content$cena, 175.23)
   })
 
 

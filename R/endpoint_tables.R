@@ -10,7 +10,7 @@
 
 
 get_current_exchangerate_table <- function(table) {
-    assert(is.character(table), "The table parameter should be a character.")
+    assert_character(table)
 
     request_url <- create_request(base_url = .tables_base_url(), path_parts = c(table))
 
@@ -18,8 +18,8 @@ get_current_exchangerate_table <- function(table) {
 }
 
 get_last_n_exchangerate_tables <- function(table, n) {
-    assert(is.character(table), "The table parameter should be a character.")
-    stopifnot(n%%1 == 0)
+    assert_character(table)
+    assert_count(n)
 
     request_url <- create_request(base_url = .tables_base_url(), path_parts = c(table, "last", n))
 
@@ -27,7 +27,7 @@ get_last_n_exchangerate_tables <- function(table, n) {
 }
 
 get_todays_exchangerate_table <- function(table) {
-    stopifnot(is.character(table))
+    assert_character(table)
 
     request_url <- create_request(base_url = .tables_base_url(), path_parts = c(table, "today"))
 
@@ -36,7 +36,8 @@ get_todays_exchangerate_table <- function(table) {
 
 
 get_exchangerate_table_from <- function(table, date) {
-    stopifnot(is.character(table))
+    assert_character(table)
+    assert_date(date)
 
     request_url <- create_request(base_url = .tables_base_url(), path_parts = c(table, as.character(date)))
 
@@ -45,9 +46,8 @@ get_exchangerate_table_from <- function(table, date) {
 
 
 get_exchangerate_tables_from_interval <- function(table, from, to) {
-    stopifnot(is.character(table))
-    stopifnot(class(from) == "Date")
-    stopifnot(class(to) == "Date")
+    assert_character(table)
+    assert_interval(from, to)
 
     request_url <- create_request(base_url = .tables_base_url(), path_parts = c(table, as.character(from),
         as.character(to)))
