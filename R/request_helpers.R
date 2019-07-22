@@ -1,6 +1,6 @@
 check_request <- function(response) {
     if (httr::http_error(response)) {
-        stop(sprintf("NBP API request failed [%s]\n%s\n<%s>", response$status_code, httr::content(response, 
+        stop(sprintf("NBP API request failed [%s]\n%s\n<%s>", response$status_code, httr::content(response,
             as = "text", encoding = "UTF-8"), response$url), call. = FALSE)
     } else {
         response

@@ -10,7 +10,7 @@
 #'
 #' @return nbp_api_response object with the request content.
 #'
-.send_golprice_endpoint_request <- function(request_url) {
+.send_gold_endpoint_request <- function(request_url) {
     response <- send_get_request(url = request_url)
     parse_goldprice_endpoint_response(response)
 }
@@ -37,7 +37,7 @@
 #'
 get_current_goldprice <- function() {
   request_url <- create_request(base_url = .goldprice_base_url())
-  .send_golprice_endpoint_request(request_url)
+  .send_gold_endpoint_request(request_url)
 }
 
 #' Retrieves the last n gold prices.
@@ -66,7 +66,7 @@ get_last_n_goldprices <- function(n) {
 
   request_url <- create_request(base_url = .goldprice_base_url(),
                                 path_parts = c("last", n))
-  .send_golprice_endpoint_request(request_url)
+  .send_gold_endpoint_request(request_url)
 }
 
 #' Retrieves the gold price that was published today.
@@ -94,7 +94,7 @@ get_last_n_goldprices <- function(n) {
 get_todays_goldprice <- function() {
   request_url <- create_request(base_url = .goldprice_base_url(),
                                 path_parts = "today")
-  .send_golprice_endpoint_request(request_url)
+  .send_gold_endpoint_request(request_url)
 }
 
 #' Retrieves the gold price from a specific date.
@@ -129,7 +129,7 @@ get_goldprice_from <- function(date) {
 
   request_url <- create_request(base_url = .goldprice_base_url(),
                                 path_parts = as.character(date))
-  .send_golprice_endpoint_request(request_url)
+  .send_gold_endpoint_request(request_url)
 }
 
 #' Retrieves the gold prices from a specific interval.
@@ -164,5 +164,5 @@ get_goldprice_from_interval <- function(from, to) {
   request_url <- create_request(base_url = .goldprice_base_url(),
                                 path_parts = c(as.character(from),
                                                as.character(to)))
-  .send_golprice_endpoint_request(request_url)
+  .send_gold_endpoint_request(request_url)
 }
