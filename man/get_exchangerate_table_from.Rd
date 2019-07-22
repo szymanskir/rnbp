@@ -27,7 +27,7 @@ appropriate message.
 }
 \examples{
 
-\donttest{
+\dontrun{
 ## Fetch the A exchange rate table from a week ago
 response <- get_exchangerate_table_from("A", Sys.Date() - 7)
 

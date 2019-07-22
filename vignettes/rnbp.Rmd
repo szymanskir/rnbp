@@ -37,7 +37,7 @@ The NBP API exposes endpoints for retrieving exchange rate tables. At the time o
 * table C - contains the bid and ask prices of foreign currencies
 
 An example of retrieving the currently effective exchange rate table is presented below:
-```{r, fig.fullwidth = TRUE}
+```{r, eval=FALSE}
 library(ggplot2)
 library(rnbp)
 
@@ -52,7 +52,7 @@ knitr::kable(current_exchangerate_table)
 
 This data can be then easily used for plotting:
 
-```{r, fig.height = 4, fig.width = 8}
+```{r, fig.height = 4, fig.width = 8, eval=FALSE}
 ggplot(current_exchangerate_table, aes(x = code, y = bid, fill = code)) + 
   geom_bar(stat = "identity")
 ```
@@ -60,7 +60,7 @@ ggplot(current_exchangerate_table, aes(x = code, y = bid, fill = code)) +
 ## Exchange rates 
 The API exposes endpoints for fetching exchange rates for specific currencies. An example of fetching the last 20 exchange rates of euros and dollars is presented bellow:
 
-```{r, fig.height = 4, fig.width = 8}
+```{r, fig.height = 4, fig.width = 8, eval=FALSE}
 ## Retrieve last 20 exchange rates for euros
 euros_response <- get_last_n_exchangerates("A", "EUR", 20)
 
@@ -85,7 +85,7 @@ ggplot(currency_data, aes(x = effectiveDate, y = mid, col = code)) +
 The API also exposes endpoints providing information regarding the gold prices calculated by the National Bank of Poland. An example of retrieving gold prices from the last 90 days is presented below:
 
 
-```{r, fig.height = 4, fig.width = 8, warning = FALSE}
+```{r, fig.height = 4, fig.width = 8, warning = FALSE, eval=FALSE}
 current_date <- Sys.Date()
 response <- get_goldprice_from_interval(current_date - 90, current_date)
 

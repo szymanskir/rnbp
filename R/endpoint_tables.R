@@ -87,7 +87,7 @@ get_last_n_exchangerate_tables <- function(table, n) {
 #'
 #' @examples
 #'
-#' \donttest{
+#' \dontrun{
 #' ## Fetch todays A exchange rate table
 #' response <- get_todays_exchangerate_table("A")
 #'
@@ -122,7 +122,7 @@ get_todays_exchangerate_table <- function(table) {
 #'
 #' @examples
 #'
-#' \donttest{
+#' \dontrun{
 #' ## Fetch the A exchange rate table from a week ago
 #' response <- get_exchangerate_table_from("A", Sys.Date() - 7)
 #'

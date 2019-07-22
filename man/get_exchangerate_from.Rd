@@ -31,7 +31,7 @@ appropriate message.
 }
 \examples{
 
-\donttest{
+\dontrun{
 ## Fetch the euro exchange rate from a week ago
 response <- get_exchangerate_from("A", "EUR", Sys.Date() - 7)
 
