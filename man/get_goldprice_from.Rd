@@ -20,7 +20,7 @@ Retrieves the gold price from a specific date.
 \details{
 As gold prices are not published on the weekends
 fetching values from a weekend date will result in a 404
-error. In those cases the function returns an error with ann
+error. In those cases the function returns an error with an
 appropriate message.
 }
 \examples{

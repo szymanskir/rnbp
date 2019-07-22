@@ -20,7 +20,7 @@ Retrieves the last n gold prices.
 
 \dontrun{
 ## Fetch the last 3 gold price values
-response <- get_last_n_goldprices()
+response <- get_last_n_goldprices(3)
 
 ## Preview response content
 response$content

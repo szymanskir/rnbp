@@ -2,7 +2,7 @@
 % Please edit documentation in R/endpoint_goldprice.R
 \name{get_goldprice_from_interval}
 \alias{get_goldprice_from_interval}
-\title{Retrieves the gold price from a specific interval.}
+\title{Retrieves the gold prices from a specific interval.}
 \usage{
 get_goldprice_from_interval(from, to)
 }
@@ -12,11 +12,11 @@ get_goldprice_from_interval(from, to)
 \item{to}{end day of the interval.}
 }
 \value{
-nbp_api_response object containing the gold price
+nbp_api_response object containing the gold prices
 from the specified interval.
 }
 \description{
-Retrieves the gold price from a specific interval.
+Retrieves the gold prices from a specific interval.
 }
 \details{
 As gold prices are not published on the weekends
@@ -27,7 +27,7 @@ result in a response that ommits those days.
 
 \dontrun{
 ## Fetch the gold prices from the past week
-response <- get_goldprice_from(Sys.Date() - 7, Sys.Date())
+response <- get_goldprice_from_interval(Sys.Date() - 7, Sys.Date())
 
 ## Preview response content
 response$content
