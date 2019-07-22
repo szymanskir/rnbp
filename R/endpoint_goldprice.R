@@ -48,7 +48,7 @@ get_current_goldprice <- function() {
 #'
 #' \dontrun{
 #' ## Fetch the last 3 gold price values
-#' response <- get_last_n_goldprices()
+#' response <- get_last_n_goldprices(3)
 #'
 #' ## Preview response content
 #' response$content
@@ -132,7 +132,7 @@ get_goldprice_from <- function(date) {
   .send_golprice_endpoint_request(request_url)
 }
 
-#' Retrieves the gold price from a specific interval.
+#' Retrieves the gold prices from a specific interval.
 #'
 #' @details As gold prices are not published on the weekends
 #' fetching values from an interval containing a weekend will
@@ -145,13 +145,13 @@ get_goldprice_from <- function(date) {
 #'
 #' \dontrun{
 #' ## Fetch the gold prices from the past week
-#' response <- get_goldprice_from(Sys.Date() - 7, Sys.Date())
+#' response <- get_goldprice_from_interval(Sys.Date() - 7, Sys.Date())
 #'
 #' ## Preview response content
 #' response$content
 #' }
 #'
-#' @return nbp_api_response object containing the gold price
+#' @return nbp_api_response object containing the gold prices
 #' from the specified interval.
 #'
 #' @seealso \url{http://api.nbp.pl/#cenyZlota}
