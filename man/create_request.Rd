@@ -5,7 +5,7 @@
 \title{Creates a request with the given path parts.
 The json format argument is included by default.}
 \usage{
-create_request(base_url, path_parts)
+create_request(base_url, path_parts = NULL)
 }
 \arguments{
 \item{base_url}{base url of the API for which a request
