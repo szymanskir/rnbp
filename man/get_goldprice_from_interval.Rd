@@ -21,7 +21,7 @@ Retrieves the gold prices from a specific interval.
 \details{
 As gold prices are not published on the weekends
 fetching values from an interval containing a weekend will
-result in a response that ommits those days.
+result in a response that omits those days.
 }
 \examples{
 

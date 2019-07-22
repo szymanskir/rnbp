@@ -8,7 +8,7 @@
 #'
 #' @param request_url url to which the request should be sent.
 #'
-#' @return nbp_api_reponse object with the request content.
+#' @return nbp_api_response object with the request content.
 #'
 .send_golprice_endpoint_request <- function(request_url) {
     response <- send_get_request(url = request_url)
@@ -71,7 +71,7 @@ get_last_n_goldprices <- function(n) {
 
 #' Retrieves the gold price that was published today.
 #'
-#' @details If todays data is not available the API will
+#' @details If today's data is not available the API will
 #' return a 404 Not found error. In that case the function will
 #' return an error with an appropriate message.
 #'
@@ -85,7 +85,7 @@ get_last_n_goldprices <- function(n) {
 #' response$content
 #' }
 #'
-#' @return nbp_api_response object containing todays gold price.
+#' @return nbp_api_response object containing today's gold price.
 #'
 #' @seealso \url{http://api.nbp.pl/#cenyZlota}
 #' @family goldprice
@@ -136,7 +136,7 @@ get_goldprice_from <- function(date) {
 #'
 #' @details As gold prices are not published on the weekends
 #' fetching values from an interval containing a weekend will
-#' result in a response that ommits those days.
+#' result in a response that omits those days.
 #'
 #' @param from start day of the interval.
 #' @param to end day of the interval.

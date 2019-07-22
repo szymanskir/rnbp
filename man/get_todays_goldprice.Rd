@@ -7,13 +7,13 @@
 get_todays_goldprice()
 }
 \value{
-nbp_api_response object containing todays gold price.
+nbp_api_response object containing today's gold price.
 }
 \description{
 Retrieves the gold price that was published today.
 }
 \details{
-If todays data is not available the API will
+If today's data is not available the API will
 return a 404 Not found error. In that case the function will
 return an error with an appropriate message.
 }

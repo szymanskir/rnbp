@@ -10,7 +10,7 @@
 \item{request_url}{url to which the request should be sent.}
 }
 \value{
-nbp_api_reponse object with the request content.
+nbp_api_response object with the request content.
 }
 \description{
 Sends a request and parses the tables endpoint response.

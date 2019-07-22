@@ -21,7 +21,7 @@ library(rnbp)
 ## Intro
 The National Bank of Poland (NBP) is the central bank of Poland responsible for issuing the polish currency, the złoty. NBP exposes a public API providing data regarding current and previous exchange rates and gold prices. The goal of the *rnbp* package is to provide access to the API from R. 
 
-The goal of this document is to present the functionalities of the package along with examples on how the retrieved data can be used. All of the endpoints expose the same set of of functionalites:
+The goal of this document is to present the functionalities of the package along with examples on how the retrieved data can be used. All of the endpoints expose the same set of of functionalities:
 
 * retrieval of the currently effective data
 * retrieval of data that was published today
@@ -30,7 +30,7 @@ The goal of this document is to present the functionalities of the package along
 * retrieval of data from a specific time interval
 
 ## Exchange rate tables
-The NBP API exposes endpoints for retrieving exchange rate tables. At the time of writting this document three tables are available:
+The NBP API exposes endpoints for retrieving exchange rate tables. At the time of writing this document three tables are available:
 
 * table A - contains the average exchange rate of foreign currencies
 * table B - contains the average exchange rate of foreign currencies

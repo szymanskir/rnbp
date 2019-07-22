@@ -43,7 +43,7 @@ with_mock_api({
     expect_equal(nbp_api_response$content$rates, expected_rates)
   })
 
-  test_that("Todays exchange rate is fetched correctly", {
+  test_that("Today's exchange rate is fetched correctly", {
     nbp_api_response <- get_todays_exchangerate("a", "EUR")
 
     expected_rates <- data.frame(
@@ -61,7 +61,7 @@ with_mock_api({
   })
 
 
-  test_that("Todays exchange rate is fetched correctly", {
+  test_that("Today's exchange rate is fetched correctly", {
     nbp_api_response <- get_todays_exchangerate("a", "EUR")
 
     expected_rates <- data.frame(
