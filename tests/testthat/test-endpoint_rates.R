@@ -9,7 +9,7 @@ test_that("Base url is defined properly", {
 
 with_mock_api({
   test_that("Current exchange rate is fetched correctly", {
-    nbp_api_response <- get_exchangerate("a", "EUR")
+    nbp_api_response <- get_current_exchangerate("a", "EUR")
 
     expected_rates <- data.frame(
       no = "139/A/NBP/2019",

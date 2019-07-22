@@ -2,7 +2,7 @@ context("Checking if query builder functions are working correctly")
 
 test_that("Requests are created properly", {
     request <- create_request(base_url = "www.test.com/", path_parts = c("part1", "part2", "part3"))
-    
+
     expect_equal(request, "www.test.com/part1/part2/part3/?format=json")
 })
 
