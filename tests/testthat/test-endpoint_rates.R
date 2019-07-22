@@ -13,7 +13,7 @@ with_mock_api({
 
     expected_rates <- data.frame(
       no = "139/A/NBP/2019",
-      effectiveDate = "2019-07-19",
+      effectiveDate = as.Date("2019-07-19"),
       mid = 4.2592,
       stringsAsFactors = FALSE
     )
@@ -31,7 +31,7 @@ with_mock_api({
 
     expected_rates <- data.frame(
       no = c("138/A/NBP/2019", "139/A/NBP/2019"),
-      effectiveDate = c("2019-07-18", "2019-07-19"),
+      effectiveDate = as.Date(c("2019-07-18", "2019-07-19")),
       mid = c(4.2635, 4.2592),
       stringsAsFactors = FALSE
     )
@@ -48,7 +48,7 @@ with_mock_api({
 
     expected_rates <- data.frame(
       no = "139/A/NBP/2019",
-      effectiveDate = "2019-07-19",
+      effectiveDate = as.Date("2019-07-19"),
       mid = 4.2592,
       stringsAsFactors = FALSE
     )
@@ -66,7 +66,7 @@ with_mock_api({
 
     expected_rates <- data.frame(
       no = "139/A/NBP/2019",
-      effectiveDate = "2019-07-19",
+      effectiveDate = as.Date("2019-07-19"),
       mid = 4.2592,
       stringsAsFactors = FALSE
     )
@@ -83,7 +83,7 @@ with_mock_api({
 
     expected_rates <- data.frame(
       no = "127/A/NBP/2019",
-      effectiveDate = "2019-07-03",
+      effectiveDate = as.Date("2019-07-03"),
       mid = 4.2442,
       stringsAsFactors = FALSE
     )
@@ -100,7 +100,7 @@ with_mock_api({
 
     expected_rates <- data.frame(
       no = c("133/A/NBP/2019", "134/A/NBP/2019"),
-      effectiveDate = c("2019-07-11", "2019-07-12"),
+      effectiveDate = as.Date(c("2019-07-11", "2019-07-12")),
       mid = c(4.2682, 4.2669),
       stringsAsFactors = FALSE
     )
