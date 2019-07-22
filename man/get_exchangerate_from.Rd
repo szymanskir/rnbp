@@ -2,7 +2,7 @@
 % Please edit documentation in R/endpoint_rates.R
 \name{get_exchangerate_from}
 \alias{get_exchangerate_from}
-\title{Retrieves the exchange rate table from a specific date.}
+\title{Retrieves the exchange rate from a specific date.}
 \usage{
 get_exchangerate_from(table, currency_code, date)
 }
@@ -13,7 +13,7 @@ rate should be fetched.}
 \item{currency_code}{code of the currency for which the
 exchange rate should be fetched.}
 
-\item{date}{date from which the exchange rate table should
+\item{date}{date from which the exchange rate should
 be fetched.}
 }
 \value{
@@ -21,10 +21,10 @@ nbp_api_response object containing the exchange rate
 from the specified date.
 }
 \description{
-Retrieves the exchange rate table from a specific date.
+Retrieves the exchange rate from a specific date.
 }
 \details{
-As exchange rate tables are not published on the weekends
+As exchange rates are not published on the weekends
 fetching values from a weekend date will result in a 404
 error. In those cases the function returns an error with an
 appropriate message.
@@ -32,7 +32,7 @@ appropriate message.
 \examples{
 
 \donttest{
-## Fetch the A exchange rate table from a week ago
+## Fetch the euro exchange rate from a week ago
 response <- get_exchangerate_from("A", "EUR", Sys.Date() - 7)
 
 ## Preview response content

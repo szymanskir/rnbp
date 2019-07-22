@@ -132,9 +132,9 @@ get_todays_exchangerate <- function(table, currency_code) {
     .send_rates_endpoint_request(request_url)
 }
 
-#' Retrieves the exchange rate table from a specific date.
+#' Retrieves the exchange rate from a specific date.
 #'
-#' @details As exchange rate tables are not published on the weekends
+#' @details As exchange rates are not published on the weekends
 #' fetching values from a weekend date will result in a 404
 #' error. In those cases the function returns an error with an
 #' appropriate message.
@@ -145,13 +145,13 @@ get_todays_exchangerate <- function(table, currency_code) {
 #' @param currency_code code of the currency for which the
 #' exchange rate should be fetched.
 #'
-#' @param date date from which the exchange rate table should
+#' @param date date from which the exchange rate should
 #' be fetched.
 #'
 #' @examples
 #'
 #' \donttest{
-#' ## Fetch the A exchange rate table from a week ago
+#' ## Fetch the euro exchange rate from a week ago
 #' response <- get_exchangerate_from("A", "EUR", Sys.Date() - 7)
 #'
 #' ## Preview response content
