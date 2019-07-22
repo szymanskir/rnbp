@@ -8,6 +8,7 @@ Authors@R:
            email = "ryszard.szymanski@outlook.com")
 Description: Use the <http://api.nbp.pl/> API through R.
 License: GPL-3 + file LICENSE
+BugReports: https://github.com/szymanskir/rnbp/issues
 Encoding: UTF-8
 LazyData: true
 Imports: curl, httr, jsonlite, utils
