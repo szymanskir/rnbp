@@ -28,7 +28,7 @@
 #'
 #' @examples
 #'
-#' \dontrun{
+#' \donttest{
 #' ## Retrieve the current exchange rate for euros
 #' response <- get_current_exchangerate("A", "EUR")
 #'
@@ -63,7 +63,7 @@ get_current_exchangerate <- function(table, currency_code) {
 #'
 #' @examples
 #'
-#' \dontrun{
+#' \donttest{
 #' ## Fetch the last 3 exhange rates for euros
 #' response <- get_last_n_exchangerates("A", "EUR", 3)
 #'
@@ -103,7 +103,7 @@ get_last_n_exchangerates <- function(table, currency_code, n) {
 #'
 #' @examples
 #'
-#' \dontrun{
+#' \donttest{
 #' ## Fetch todays A exchange rate table
 #' response <- get_todays_exchangerate("A", "EUR")
 #'
@@ -150,7 +150,7 @@ get_todays_exchangerate <- function(table, currency_code) {
 #'
 #' @examples
 #'
-#' \dontrun{
+#' \donttest{
 #' ## Fetch the euro exchange rate from a week ago
 #' response <- get_exchangerate_from("A", "EUR", Sys.Date() - 7)
 #'
@@ -193,7 +193,7 @@ get_exchangerate_from <- function(table, currency_code, date) {
 #'
 #' @examples
 #'
-#' \dontrun{
+#' \donttest{
 #' ## Fetch the exchange rate table from the past week
 #' response <- get_exchangerate_tables_from_interval("A", Sys.Date() - 7, Sys.Date())
 #'

@@ -20,7 +20,7 @@ Retrieves the last n exchange rate tables.
 }
 \examples{
 
-\dontrun{
+\donttest{
 ## Fetch the last 3 A exchange rate tables
 response <- get_last_n_exchangerate_tables("A", 3)
 

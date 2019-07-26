@@ -25,7 +25,7 @@ appropriate message.
 }
 \examples{
 
-\dontrun{
+\donttest{
 ## Fetch the gold price from a week ago
 response <- get_goldprice_from(Sys.Date() - 7)
 
