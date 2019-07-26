@@ -1,5 +1,5 @@
 Package: rnbp
-Title: R Wrapper for the National Bank of Poland API
+Title: Wrapper for the National Bank of Poland API
 Version: 0.1.0
 Authors@R: 
     person(given = "Ryszard",
