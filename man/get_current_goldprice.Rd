@@ -15,7 +15,7 @@ Retrieves the current gold price.
 }
 \examples{
 
-\dontrun{
+\donttest{
 ## Fetch the current gold price
 response <- get_current_goldprice()
 

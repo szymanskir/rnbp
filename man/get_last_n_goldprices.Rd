@@ -18,7 +18,7 @@ Retrieves the last n gold prices.
 }
 \examples{
 
-\dontrun{
+\donttest{
 ## Fetch the last 3 gold price values
 response <- get_last_n_goldprices(3)
 

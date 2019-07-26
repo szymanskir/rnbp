@@ -25,7 +25,7 @@ result in a response that omits those days.
 }
 \examples{
 
-\dontrun{
+\donttest{
 ## Fetch the gold prices from the past week
 response <- get_goldprice_from_interval(Sys.Date() - 7, Sys.Date())
 

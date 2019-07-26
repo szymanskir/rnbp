@@ -24,7 +24,7 @@ Retrieves the last n exchange rates.
 }
 \examples{
 
-\dontrun{
+\donttest{
 ## Fetch the last 3 exhange rates for euros
 response <- get_last_n_exchangerates("A", "EUR", 3)
 

@@ -18,7 +18,7 @@ Retrieves the current exchange rate table.
 }
 \examples{
 
-\dontrun{
+\donttest{
 ## Retrieve the current A exchange rate table
 response <- get_current_exchangerate_table("A")
 

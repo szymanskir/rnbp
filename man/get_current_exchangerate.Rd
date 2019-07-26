@@ -22,7 +22,7 @@ Retrieves the current exchange rate for the given currency.
 }
 \examples{
 
-\dontrun{
+\donttest{
 ## Retrieve the current exchange rate for euros
 response <- get_current_exchangerate("A", "EUR")
 
