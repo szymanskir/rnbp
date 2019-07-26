@@ -7,7 +7,9 @@ Authors@R:
            role = c("aut", "cre"),
            email = "ryszard.szymanski@outlook.com")
 Maintainer: Ryszard Szymanski <ryszard.szymanski@outlook.com>
-Description: Use the <http://api.nbp.pl/> API through R.
+Description: Use the <http://api.nbp.pl/> API through R. Retrieve
+    currency exchange rates and gold prices data published by the
+    National Bank of Poland in form of convenient R objects.
 License: GPL-3
 BugReports: https://github.com/szymanskir/rnbp/issues
 Encoding: UTF-8

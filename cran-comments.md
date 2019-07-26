@@ -1,6 +1,7 @@
 ## Resubmission
 This is a resubmission. In this version I have:
 
+* Provided a more elaborate description of the package
 * Removed the redundant "R" from the title
 * Removed the unnecessary LICENSE file and its reference in the
   DESCRIPTION file
