@@ -15,6 +15,12 @@ The rnbp package is an R wrapper for the National Bank of Poland API:
 
 ## Installation
 
+The rnbp package is available on CRAN, you can install it with:
+
+``` r
+install.packages("rnbp")
+```
+
 You can install the the development version of rnbp from
 [GitHub](https://github.com/) with:
 
