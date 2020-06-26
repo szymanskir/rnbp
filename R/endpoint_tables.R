@@ -33,7 +33,7 @@
 #'
 #' }
 #'
-#' @seealso \url{http://api.nbp.pl/#kursyWalut}
+#' @seealso \url{https://api.nbp.pl/#kursyWalut}
 #' @family tables
 #' @export
 #'
@@ -64,7 +64,7 @@ get_current_exchangerate_table <- function(table) {
 #' @return nbp_api_response object containing the last n
 #' exchange rate tables.
 #'
-#' @seealso \url{http://api.nbp.pl/#kursyWalut}
+#' @seealso \url{https://api.nbp.pl/#kursyWalut}
 #' @family tables
 #' @export
 #'
@@ -97,7 +97,7 @@ get_last_n_exchangerate_tables <- function(table, n) {
 #'
 #' @return nbp_api_response object containing today's exchange rate table.
 #'
-#' @seealso \url{http://api.nbp.pl/#kursyWalut}
+#' @seealso \url{https://api.nbp.pl/#kursyWalut}
 #' @family tables
 #' @export
 #'
@@ -133,7 +133,7 @@ get_todays_exchangerate_table <- function(table) {
 #' @return nbp_api_response object containing the exchange rate
 #' table from the specified date.
 #'
-#' @seealso \url{http://api.nbp.pl/#kursyWalut}
+#' @seealso \url{https://api.nbp.pl/#kursyWalut}
 #' @family tables
 #' @export
 #'
@@ -169,7 +169,7 @@ get_exchangerate_table_from <- function(table, date) {
 #' @return nbp_api_response object containing the exchange rates
 #' tables from the specified interval.
 #'
-#' @seealso \url{http://api.nbp.pl/#kursyWalut}
+#' @seealso \url{https://api.nbp.pl/#kursyWalut}
 #' @family tables
 #' @export
 #'

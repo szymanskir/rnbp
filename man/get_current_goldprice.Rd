@@ -26,11 +26,12 @@ response$content$cena
 
 }
 \seealso{
-\url{http://api.nbp.pl/#cenyZlota}
+\url{https://api.nbp.pl/#cenyZlota}
 
-Other goldprice: \code{\link{get_goldprice_from_interval}},
-  \code{\link{get_goldprice_from}},
-  \code{\link{get_last_n_goldprices}},
-  \code{\link{get_todays_goldprice}}
+Other goldprice: 
+\code{\link{get_goldprice_from_interval}()},
+\code{\link{get_goldprice_from}()},
+\code{\link{get_last_n_goldprices}()},
+\code{\link{get_todays_goldprice}()}
 }
 \concept{goldprice}

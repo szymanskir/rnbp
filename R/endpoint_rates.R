@@ -37,7 +37,7 @@
 #'
 #' }
 #'
-#' @seealso \url{http://api.nbp.pl/#kursyWalut}
+#' @seealso \url{https://api.nbp.pl/#kursyWalut}
 #' @family rates
 #' @export
 #'
@@ -74,7 +74,7 @@ get_current_exchangerate <- function(table, currency_code) {
 #' @return nbp_api_response object containing the last n
 #' exchange rates.
 #'
-#' @seealso \url{http://api.nbp.pl/#kursyWalut}
+#' @seealso \url{https://api.nbp.pl/#kursyWalut}
 #' @family rates
 #' @export
 #'
@@ -113,7 +113,7 @@ get_last_n_exchangerates <- function(table, currency_code, n) {
 #'
 #' @return nbp_api_response object containing today's exchange rate.
 #'
-#' @seealso \url{http://api.nbp.pl/#kursyWalut}
+#' @seealso \url{https://api.nbp.pl/#kursyWalut}
 #' @family rates
 #' @export
 #'
@@ -161,7 +161,7 @@ get_todays_exchangerate <- function(table, currency_code) {
 #' @return nbp_api_response object containing the exchange rate
 #' from the specified date.
 #'
-#' @seealso \url{http://api.nbp.pl/#kursyWalut}
+#' @seealso \url{https://api.nbp.pl/#kursyWalut}
 #' @family rates
 #' @export
 #'
@@ -204,7 +204,7 @@ get_exchangerate_from <- function(table, currency_code, date) {
 #' @return nbp_api_response object containing the exchange rates
 #' from the specified interval.
 #'
-#' @seealso \url{http://api.nbp.pl/#kursyWalut}
+#' @seealso \url{https://api.nbp.pl/#kursyWalut}
 #' @family rates
 #' @export
 #'

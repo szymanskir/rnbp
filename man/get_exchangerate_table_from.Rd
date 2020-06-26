@@ -37,11 +37,12 @@ response$content
 
 }
 \seealso{
-\url{http://api.nbp.pl/#kursyWalut}
+\url{https://api.nbp.pl/#kursyWalut}
 
-Other tables: \code{\link{get_current_exchangerate_table}},
-  \code{\link{get_exchangerate_tables_from_interval}},
-  \code{\link{get_last_n_exchangerate_tables}},
-  \code{\link{get_todays_exchangerate_table}}
+Other tables: 
+\code{\link{get_current_exchangerate_table}()},
+\code{\link{get_exchangerate_tables_from_interval}()},
+\code{\link{get_last_n_exchangerate_tables}()},
+\code{\link{get_todays_exchangerate_table}()}
 }
 \concept{tables}
