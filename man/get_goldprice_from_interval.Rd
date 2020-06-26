@@ -35,7 +35,7 @@ response$content
 
 }
 \seealso{
-\url{http://api.nbp.pl/#cenyZlota}
+\url{https://api.nbp.pl/#cenyZlota}
 
 Other goldprice: 
 \code{\link{get_current_goldprice}()},

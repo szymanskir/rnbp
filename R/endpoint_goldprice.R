@@ -31,7 +31,7 @@
 #'
 #' }
 #'
-#' @seealso \url{http://api.nbp.pl/#cenyZlota}
+#' @seealso \url{https://api.nbp.pl/#cenyZlota}
 #' @family goldprice
 #' @export
 #'
@@ -57,7 +57,7 @@ get_current_goldprice <- function() {
 #' @return nbp_api_response object containing the last n
 #' gold prices.
 #'
-#' @seealso \url{http://api.nbp.pl/#cenyZlota}
+#' @seealso \url{https://api.nbp.pl/#cenyZlota}
 #' @family goldprice
 #' @export
 #'
@@ -87,7 +87,7 @@ get_last_n_goldprices <- function(n) {
 #'
 #' @return nbp_api_response object containing today's gold price.
 #'
-#' @seealso \url{http://api.nbp.pl/#cenyZlota}
+#' @seealso \url{https://api.nbp.pl/#cenyZlota}
 #' @family goldprice
 #' @export
 #'
@@ -120,7 +120,7 @@ get_todays_goldprice <- function() {
 #' @return nbp_api_response object containing the gold price
 #' from the specified date.
 #'
-#' @seealso \url{http://api.nbp.pl/#cenyZlota}
+#' @seealso \url{https://api.nbp.pl/#cenyZlota}
 #' @family goldprice
 #' @export
 #'
@@ -154,7 +154,7 @@ get_goldprice_from <- function(date) {
 #' @return nbp_api_response object containing the gold prices
 #' from the specified interval.
 #'
-#' @seealso \url{http://api.nbp.pl/#cenyZlota}
+#' @seealso \url{https://api.nbp.pl/#cenyZlota}
 #' @family goldprice
 #' @export
 #'

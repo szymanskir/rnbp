@@ -30,7 +30,7 @@ response$content
 
 }
 \seealso{
-\url{http://api.nbp.pl/#kursyWalut}
+\url{https://api.nbp.pl/#kursyWalut}
 
 Other tables: 
 \code{\link{get_current_exchangerate_table}()},

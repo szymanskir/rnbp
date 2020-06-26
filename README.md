@@ -11,7 +11,7 @@ coverage](https://codecov.io/gh/szymanskir/rnbp/branch/master/graph/badge.svg)](
 [![Cran total downloads](https://cranlogs.r-pkg.org/badges/grand-total/rnbp)](https://cranlogs.r-pkg.org/badges/grand-total/rnbp)
 
 The rnbp package is an R wrapper for the National Bank of Poland API:
-<http://api.nbp.pl/>
+<https://api.nbp.pl/>
 
 ## Installation
 

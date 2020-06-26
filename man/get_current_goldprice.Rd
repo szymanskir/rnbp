@@ -26,7 +26,7 @@ response$content$cena
 
 }
 \seealso{
-\url{http://api.nbp.pl/#cenyZlota}
+\url{https://api.nbp.pl/#cenyZlota}
 
 Other goldprice: 
 \code{\link{get_goldprice_from_interval}()},
