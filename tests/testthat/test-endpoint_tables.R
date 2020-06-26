@@ -3,7 +3,7 @@ context("Checking if tables endpoint related functions are working correctly")
 test_that("Base url is defined properly", {
   base_url <- .tables_base_url()
 
-  expect_equal(base_url, "http://api.nbp.pl/api/exchangerates/tables/")
+  expect_equal(base_url, "https://api.nbp.pl/api/exchangerates/tables/")
 })
 
 

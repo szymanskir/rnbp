@@ -34,9 +34,10 @@ response$content
 \seealso{
 \url{http://api.nbp.pl/#kursyWalut}
 
-Other tables: \code{\link{get_current_exchangerate_table}},
-  \code{\link{get_exchangerate_table_from}},
-  \code{\link{get_exchangerate_tables_from_interval}},
-  \code{\link{get_last_n_exchangerate_tables}}
+Other tables: 
+\code{\link{get_current_exchangerate_table}()},
+\code{\link{get_exchangerate_table_from}()},
+\code{\link{get_exchangerate_tables_from_interval}()},
+\code{\link{get_last_n_exchangerate_tables}()}
 }
 \concept{tables}
