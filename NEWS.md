@@ -1,4 +1,6 @@
-# rnbp 0.2.?
+# rnbp (development version)
+
+# rnbp 0.2.0
 
 * Added use of https instead of http.
 
