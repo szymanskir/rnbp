@@ -26,11 +26,14 @@ appropriate message.
 \examples{
 
 \donttest{
-## Fetch the gold price from a week ago
-response <- get_goldprice_from(Sys.Date() - 7)
-
-## Preview response content
-response$content
+  tryCatch({
+      ## Fetch the gold price from a week ago
+      response <- get_goldprice_from(Sys.Date() - 7)
+      ## Preview response content
+      response$content
+    },
+    error = function(e) message(e)
+  )
 }
 
 }

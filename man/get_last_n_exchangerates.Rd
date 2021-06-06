@@ -25,11 +25,14 @@ Retrieves the last n exchange rates.
 \examples{
 
 \donttest{
-## Fetch the last 3 exhange rates for euros
-response <- get_last_n_exchangerates("A", "EUR", 3)
-
-## Preview response content
-response$content
+  tryCatch({
+      ## Fetch the last 3 exhange rates for euros
+      response <- get_last_n_exchangerates("A", "EUR", 3)
+      ## Preview response content
+      response$content
+    },
+    error = function(e) message(e)
+  )
 }
 
 }

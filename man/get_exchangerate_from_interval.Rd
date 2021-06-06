@@ -32,11 +32,14 @@ result in a response that omits those days.
 \examples{
 
 \donttest{
-## Fetch the exchange rate table from the past week
-response <- get_exchangerate_tables_from_interval("A", Sys.Date() - 7, Sys.Date())
-
-## Preview response content
-response$content
+  tryCatch({
+      ## Fetch the exchange rate table from the past week
+      response <- get_exchangerate_tables_from_interval("A", Sys.Date() - 7, Sys.Date())
+      ## Preview response content
+      response$content
+    },
+    error = function(e) message(e)
+  )
 }
 
 }

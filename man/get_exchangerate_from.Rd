@@ -32,11 +32,14 @@ appropriate message.
 \examples{
 
 \donttest{
-## Fetch the euro exchange rate from a week ago
-response <- get_exchangerate_from("A", "EUR", Sys.Date() - 7)
-
-## Preview response content
-response$content
+  tryCatch({
+      ## Fetch the euro exchange rate from a week ago
+      response <- get_exchangerate_from("A", "EUR", Sys.Date() - 7)
+      ## Preview response content
+      response$content
+    },
+    error = function(e) message(e)
+  )
 }
 
 }

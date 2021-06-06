@@ -20,11 +20,14 @@ return an error with an appropriate message.
 \examples{
 
 \donttest{
-## Fetch todays gold price
-response <- get_todays_goldprice()
-
-## Preview response content
-response$content
+  tryCatch({
+      ## Fetch todays gold price
+      response <- get_todays_goldprice()
+      ## Preview response content
+      response$content
+    },
+    error = function(e) message(e)
+  )
 }
 
 }

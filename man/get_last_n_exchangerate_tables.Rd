@@ -21,11 +21,14 @@ Retrieves the last n exchange rate tables.
 \examples{
 
 \donttest{
-## Fetch the last 3 A exchange rate tables
-response <- get_last_n_exchangerate_tables("A", 3)
-
-## Preview response content
-response$content
+  tryCatch({
+      ## Fetch the last 3 A exchange rate tables
+      response <- get_last_n_exchangerate_tables("A", 3)
+      ## Preview response content
+      response$content
+    },
+    error = function(e) message(e)
+  )
 }
 
 }

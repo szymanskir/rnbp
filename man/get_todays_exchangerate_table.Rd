@@ -23,11 +23,14 @@ return an error with an appropriate message.
 \examples{
 
 \donttest{
-## Fetch todays A exchange rate table
-response <- get_todays_exchangerate_table("A")
-
-## Preview response content
-response$content
+  tryCatch({
+      ## Fetch todays A exchange rate table
+      response <- get_todays_exchangerate_table("A")
+      ## Preview response content
+      response$content
+    },
+    error = function(e) message(e)
+  )
 }
 
 }

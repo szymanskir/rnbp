@@ -16,12 +16,14 @@ Retrieves the current gold price.
 \examples{
 
 \donttest{
-## Fetch the current gold price
-response <- get_current_goldprice()
-
-## Retrieve the current gold price value
-response$content$cena
-
+  tryCatch({
+      ## Fetch the current gold price
+      response <- get_current_goldprice()
+      ## Retrieve the current gold price value
+      response$content$cena
+    },
+    error = function(e) message(e)
+  )
 }
 
 }
