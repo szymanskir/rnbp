@@ -23,12 +23,14 @@
 #' @examples
 #'
 #' \donttest{
-#' ## Fetch the current gold price
-#' response <- get_current_goldprice()
-#'
-#' ## Retrieve the current gold price value
-#' response$content$cena
-#'
+#'   tryCatch({
+#'       ## Fetch the current gold price
+#'       response <- get_current_goldprice()
+#'       ## Retrieve the current gold price value
+#'       response$content$cena
+#'     },
+#'     error = function(e) message(e)
+#'   )
 #' }
 #'
 #' @seealso \url{https://api.nbp.pl/#cenyZlota}
@@ -47,11 +49,14 @@ get_current_goldprice <- function() {
 #' @examples
 #'
 #' \donttest{
-#' ## Fetch the last 3 gold price values
-#' response <- get_last_n_goldprices(3)
-#'
-#' ## Preview response content
-#' response$content
+#'   tryCatch({
+#'       ## Fetch the last 3 gold price values
+#'       response <- get_last_n_goldprices(3)
+#'       ## Preview response content
+#'       response$content
+#'     },
+#'     error = function(e) message(e)
+#'   )
 #' }
 #'
 #' @return nbp_api_response object containing the last n
@@ -78,11 +83,14 @@ get_last_n_goldprices <- function(n) {
 #' @examples
 #'
 #' \donttest{
-#' ## Fetch todays gold price
-#' response <- get_todays_goldprice()
-#'
-#' ## Preview response content
-#' response$content
+#'   tryCatch({
+#'       ## Fetch todays gold price
+#'       response <- get_todays_goldprice()
+#'       ## Preview response content
+#'       response$content
+#'     },
+#'     error = function(e) message(e)
+#'   )
 #' }
 #'
 #' @return nbp_api_response object containing today's gold price.
@@ -110,11 +118,14 @@ get_todays_goldprice <- function() {
 #' @examples
 #'
 #' \donttest{
-#' ## Fetch the gold price from a week ago
-#' response <- get_goldprice_from(Sys.Date() - 7)
-#'
-#' ## Preview response content
-#' response$content
+#'   tryCatch({
+#'       ## Fetch the gold price from a week ago
+#'       response <- get_goldprice_from(Sys.Date() - 7)
+#'       ## Preview response content
+#'       response$content
+#'     },
+#'     error = function(e) message(e)
+#'   )
 #' }
 #'
 #' @return nbp_api_response object containing the gold price
@@ -144,11 +155,14 @@ get_goldprice_from <- function(date) {
 #' @examples
 #'
 #' \donttest{
-#' ## Fetch the gold prices from the past week
-#' response <- get_goldprice_from_interval(Sys.Date() - 7, Sys.Date())
-#'
-#' ## Preview response content
-#' response$content
+#'   tryCatch({
+#'       ## Fetch the gold prices from the past week
+#'       response <- get_goldprice_from_interval(Sys.Date() - 7, Sys.Date())
+#'       ## Preview response content
+#'       response$content
+#'     },
+#'     error = function(e) message(e)
+#'   )
 #' }
 #'
 #' @return nbp_api_response object containing the gold prices

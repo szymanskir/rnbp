@@ -29,12 +29,14 @@
 #' @examples
 #'
 #' \donttest{
-#' ## Retrieve the current exchange rate for euros
-#' response <- get_current_exchangerate("A", "EUR")
-#'
-#' ## Retrieve the content
-#' response$content
-#'
+#'   tryCatch({
+#'       ## Retrieve the current exchange rate for euros
+#'       response <- get_current_exchangerate("A", "EUR")
+#'       ## Retrieve the content
+#'       response$content
+#'     },
+#'     error = function(e) message(e)
+#'   )
 #' }
 #'
 #' @seealso \url{https://api.nbp.pl/#kursyWalut}
@@ -64,11 +66,14 @@ get_current_exchangerate <- function(table, currency_code) {
 #' @examples
 #'
 #' \donttest{
-#' ## Fetch the last 3 exhange rates for euros
-#' response <- get_last_n_exchangerates("A", "EUR", 3)
-#'
-#' ## Preview response content
-#' response$content
+#'   tryCatch({
+#'       ## Fetch the last 3 exhange rates for euros
+#'       response <- get_last_n_exchangerates("A", "EUR", 3)
+#'       ## Preview response content
+#'       response$content
+#'     },
+#'     error = function(e) message(e)
+#'   )
 #' }
 #'
 #' @return nbp_api_response object containing the last n
@@ -104,11 +109,14 @@ get_last_n_exchangerates <- function(table, currency_code, n) {
 #' @examples
 #'
 #' \donttest{
-#' ## Fetch todays A exchange rate table
-#' response <- get_todays_exchangerate("A", "EUR")
-#'
-#' ## Preview response content
-#' response$content
+#'   tryCatch({
+#'       ## Fetch todays A exchange rate table
+#'       response <- get_todays_exchangerate("A", "EUR")
+#'       ## Preview response content
+#'       response$content
+#'     },
+#'     error = function(e) message(e)
+#'   )
 #' }
 #'
 #' @return nbp_api_response object containing today's exchange rate.
@@ -151,11 +159,14 @@ get_todays_exchangerate <- function(table, currency_code) {
 #' @examples
 #'
 #' \donttest{
-#' ## Fetch the euro exchange rate from a week ago
-#' response <- get_exchangerate_from("A", "EUR", Sys.Date() - 7)
-#'
-#' ## Preview response content
-#' response$content
+#'   tryCatch({
+#'       ## Fetch the euro exchange rate from a week ago
+#'       response <- get_exchangerate_from("A", "EUR", Sys.Date() - 7)
+#'       ## Preview response content
+#'       response$content
+#'     },
+#'     error = function(e) message(e)
+#'   )
 #' }
 #'
 #' @return nbp_api_response object containing the exchange rate
@@ -194,11 +205,14 @@ get_exchangerate_from <- function(table, currency_code, date) {
 #' @examples
 #'
 #' \donttest{
-#' ## Fetch the exchange rate table from the past week
-#' response <- get_exchangerate_tables_from_interval("A", Sys.Date() - 7, Sys.Date())
-#'
-#' ## Preview response content
-#' response$content
+#'   tryCatch({
+#'       ## Fetch the exchange rate table from the past week
+#'       response <- get_exchangerate_tables_from_interval("A", Sys.Date() - 7, Sys.Date())
+#'       ## Preview response content
+#'       response$content
+#'     },
+#'     error = function(e) message(e)
+#'   )
 #' }
 #'
 #' @return nbp_api_response object containing the exchange rates

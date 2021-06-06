@@ -19,11 +19,14 @@ Retrieves the last n gold prices.
 \examples{
 
 \donttest{
-## Fetch the last 3 gold price values
-response <- get_last_n_goldprices(3)
-
-## Preview response content
-response$content
+  tryCatch({
+      ## Fetch the last 3 gold price values
+      response <- get_last_n_goldprices(3)
+      ## Preview response content
+      response$content
+    },
+    error = function(e) message(e)
+  )
 }
 
 }

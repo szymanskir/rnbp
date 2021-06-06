@@ -23,12 +23,14 @@ Retrieves the current exchange rate for the given currency.
 \examples{
 
 \donttest{
-## Retrieve the current exchange rate for euros
-response <- get_current_exchangerate("A", "EUR")
-
-## Retrieve the content
-response$content
-
+  tryCatch({
+      ## Retrieve the current exchange rate for euros
+      response <- get_current_exchangerate("A", "EUR")
+      ## Retrieve the content
+      response$content
+    },
+    error = function(e) message(e)
+  )
 }
 
 }

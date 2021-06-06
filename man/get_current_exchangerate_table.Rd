@@ -19,12 +19,14 @@ Retrieves the current exchange rate table.
 \examples{
 
 \donttest{
-## Retrieve the current A exchange rate table
-response <- get_current_exchangerate_table("A")
-
-## Retrieve the content
-response$content
-
+  tryCatch({
+      ## Retrieve the current A exchange rate table
+      response <- get_current_exchangerate_table("A")
+      ## Retrieve the content
+      response$content
+    },
+    error = function(e) message(e)
+  )
 }
 
 }

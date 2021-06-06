@@ -28,11 +28,15 @@ appropriate message.
 \examples{
 
 \donttest{
-## Fetch the A exchange rate table from a week ago
-response <- get_exchangerate_table_from("A", Sys.Date() - 7)
+  tryCatch({
+      ## Fetch the A exchange rate table from a week ago
+      response <- get_exchangerate_table_from("A", Sys.Date() - 7)
+      ## Preview response content
+      response$content
+    },
+    error = function(e) message(e)
+  )
 
-## Preview response content
-response$content
 }
 
 }
