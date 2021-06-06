@@ -13,7 +13,6 @@ Description: Use the <http://api.nbp.pl/> API through R. Retrieve
 License: GPL-3
 BugReports: https://github.com/szymanskir/rnbp/issues
 Encoding: UTF-8
-LazyData: true
 Imports: curl, httr, jsonlite, utils
 Suggests: 
     covr,
