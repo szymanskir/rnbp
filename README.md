@@ -1,14 +1,14 @@
 
 # rnbp
 
-[![Travis build
-status](https://travis-ci.com/szymanskir/rnbp.svg?branch=master)](https://travis-ci.com/szymanskir/rnbp?branch=master)
-[![AppVeyor build
-status](https://ci.appveyor.com/api/projects/status/github/szymanskir/rnbp?branch=master&svg=true)](https://ci.appveyor.com/project/szymanskir/rnbp)
-[![Codecov test
-coverage](https://codecov.io/gh/szymanskir/rnbp/branch/master/graph/badge.svg)](https://codecov.io/gh/szymanskir/rnbp?branch=master)
-<https://www.r-pkg.org/badges/version/rnbp>
-<https://cranlogs.r-pkg.org/badges/grand-total/rnbp>
+<!-- badges: start -->
+
+[![R-CMD-check](https://github.com/szymanskir/rnbp/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/szymanskir/rnbp/actions/workflows/R-CMD-check.yaml)
+[![CRAN
+version](https://www.r-pkg.org/badges/version/rnbp)](https://www.r-pkg.org/badges/version/rnbp)
+[![Cran total
+downloads](https://cranlogs.r-pkg.org/badges/grand-total/rnbp)](https://cranlogs.r-pkg.org/badges/grand-total/rnbp)
+<!-- badges: end -->
 
 The rnbp package is an R wrapper for the National Bank of Poland API:
 <https://api.nbp.pl/>
