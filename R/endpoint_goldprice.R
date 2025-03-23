@@ -1,7 +1,7 @@
 #' Returns the base url for the gold price endpoint.
 #'
 .goldprice_base_url <- function() {
-    add_path_part(nbp_api_base_url(), "cenyzlota")
+  add_path_part(nbp_api_base_url(), "cenyzlota")
 }
 
 #' Sends a request and parses the gold price endpoint response.
@@ -11,8 +11,8 @@
 #' @return nbp_api_response object with the request content.
 #'
 .send_gold_endpoint_request <- function(request_url) {
-    response <- send_get_request(url = request_url)
-    parse_goldprice_endpoint_response(response)
+  response <- send_get_request(url = request_url)
+  parse_goldprice_endpoint_response(response)
 }
 
 #' Retrieves the current gold price.
@@ -21,16 +21,16 @@
 #' gold price.
 #'
 #' @examples
-#'
 #' \donttest{
-#'   tryCatch({
-#'       ## Fetch the current gold price
-#'       response <- get_current_goldprice()
-#'       ## Retrieve the current gold price value
-#'       response$content$cena
-#'     },
-#'     error = function(e) message(e)
-#'   )
+#' tryCatch(
+#'   {
+#'     ## Fetch the current gold price
+#'     response <- get_current_goldprice()
+#'     ## Retrieve the current gold price value
+#'     response$content$cena
+#'   },
+#'   error = function(e) message(e)
+#' )
 #' }
 #'
 #' @seealso \url{https://api.nbp.pl/#cenyZlota}
@@ -47,16 +47,16 @@ get_current_goldprice <- function() {
 #' @param n number of gold prices to retrieve.
 #'
 #' @examples
-#'
 #' \donttest{
-#'   tryCatch({
-#'       ## Fetch the last 3 gold price values
-#'       response <- get_last_n_goldprices(3)
-#'       ## Preview response content
-#'       response$content
-#'     },
-#'     error = function(e) message(e)
-#'   )
+#' tryCatch(
+#'   {
+#'     ## Fetch the last 3 gold price values
+#'     response <- get_last_n_goldprices(3)
+#'     ## Preview response content
+#'     response$content
+#'   },
+#'   error = function(e) message(e)
+#' )
 #' }
 #'
 #' @return nbp_api_response object containing the last n
@@ -69,8 +69,10 @@ get_current_goldprice <- function() {
 get_last_n_goldprices <- function(n) {
   assert_count(n)
 
-  request_url <- create_request(base_url = .goldprice_base_url(),
-                                path_parts = c("last", n))
+  request_url <- create_request(
+    base_url = .goldprice_base_url(),
+    path_parts = c("last", n)
+  )
   .send_gold_endpoint_request(request_url)
 }
 
@@ -81,16 +83,16 @@ get_last_n_goldprices <- function(n) {
 #' return an error with an appropriate message.
 #'
 #' @examples
-#'
 #' \donttest{
-#'   tryCatch({
-#'       ## Fetch todays gold price
-#'       response <- get_todays_goldprice()
-#'       ## Preview response content
-#'       response$content
-#'     },
-#'     error = function(e) message(e)
-#'   )
+#' tryCatch(
+#'   {
+#'     ## Fetch todays gold price
+#'     response <- get_todays_goldprice()
+#'     ## Preview response content
+#'     response$content
+#'   },
+#'   error = function(e) message(e)
+#' )
 #' }
 #'
 #' @return nbp_api_response object containing today's gold price.
@@ -100,8 +102,10 @@ get_last_n_goldprices <- function(n) {
 #' @export
 #'
 get_todays_goldprice <- function() {
-  request_url <- create_request(base_url = .goldprice_base_url(),
-                                path_parts = "today")
+  request_url <- create_request(
+    base_url = .goldprice_base_url(),
+    path_parts = "today"
+  )
   .send_gold_endpoint_request(request_url)
 }
 
@@ -116,16 +120,16 @@ get_todays_goldprice <- function() {
 #' be fetched.
 #'
 #' @examples
-#'
 #' \donttest{
-#'   tryCatch({
-#'       ## Fetch the gold price from a week ago
-#'       response <- get_goldprice_from(Sys.Date() - 7)
-#'       ## Preview response content
-#'       response$content
-#'     },
-#'     error = function(e) message(e)
-#'   )
+#' tryCatch(
+#'   {
+#'     ## Fetch the gold price from a week ago
+#'     response <- get_goldprice_from(Sys.Date() - 7)
+#'     ## Preview response content
+#'     response$content
+#'   },
+#'   error = function(e) message(e)
+#' )
 #' }
 #'
 #' @return nbp_api_response object containing the gold price
@@ -138,8 +142,10 @@ get_todays_goldprice <- function() {
 get_goldprice_from <- function(date) {
   assert_date(date)
 
-  request_url <- create_request(base_url = .goldprice_base_url(),
-                                path_parts = as.character(date))
+  request_url <- create_request(
+    base_url = .goldprice_base_url(),
+    path_parts = as.character(date)
+  )
   .send_gold_endpoint_request(request_url)
 }
 
@@ -153,16 +159,16 @@ get_goldprice_from <- function(date) {
 #' @param to end day of the interval.
 #'
 #' @examples
-#'
 #' \donttest{
-#'   tryCatch({
-#'       ## Fetch the gold prices from the past week
-#'       response <- get_goldprice_from_interval(Sys.Date() - 7, Sys.Date())
-#'       ## Preview response content
-#'       response$content
-#'     },
-#'     error = function(e) message(e)
-#'   )
+#' tryCatch(
+#'   {
+#'     ## Fetch the gold prices from the past week
+#'     response <- get_goldprice_from_interval(Sys.Date() - 7, Sys.Date())
+#'     ## Preview response content
+#'     response$content
+#'   },
+#'   error = function(e) message(e)
+#' )
 #' }
 #'
 #' @return nbp_api_response object containing the gold prices
@@ -175,8 +181,12 @@ get_goldprice_from <- function(date) {
 get_goldprice_from_interval <- function(from, to) {
   assert_interval(from, to)
 
-  request_url <- create_request(base_url = .goldprice_base_url(),
-                                path_parts = c(as.character(from),
-                                               as.character(to)))
+  request_url <- create_request(
+    base_url = .goldprice_base_url(),
+    path_parts = c(
+      as.character(from),
+      as.character(to)
+    )
+  )
   .send_gold_endpoint_request(request_url)
 }

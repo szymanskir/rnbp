@@ -1,7 +1,7 @@
 assert <- function(expr, error) {
-    if (!expr) {
-        stop(error, call. = FALSE)
-    }
+  if (!expr) {
+    stop(error, call. = FALSE)
+  }
 }
 
 assert_character <- function(x) {

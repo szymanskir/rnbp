@@ -40,8 +40,10 @@ with_mock_api({
     })
 
     test_that("Gold prices from specific interval are fetched correctly", {
-      nbp_api_response <- get_goldprice_from_interval(from = as.Date("2019-07-15"),
-                                                      to = as.Date("2019-07-16"))
+      nbp_api_response <- get_goldprice_from_interval(
+        from = as.Date("2019-07-15"),
+        to = as.Date("2019-07-16")
+      )
 
       expect_equal(nbp_api_response$content$data, as.Date(c("2019-07-15", "2019-07-16")))
       expect_equal(nbp_api_response$content$cena, c(171.49, 171.9))

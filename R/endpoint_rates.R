@@ -1,7 +1,7 @@
 #' Returns the base url for the rates endpoint.
 #'
 .rates_base_url <- function() {
-    add_path_part(nbp_api_base_url(), "exchangerates/rates")
+  add_path_part(nbp_api_base_url(), "exchangerates/rates")
 }
 
 #' Sends a request and parses the rates endpoint response.
@@ -11,8 +11,8 @@
 #' @return nbp_api_response object with the request content.
 #'
 .send_rates_endpoint_request <- function(request_url) {
-    response <- send_get_request(url = request_url)
-    parse_rates_endpoint_response(response)
+  response <- send_get_request(url = request_url)
+  parse_rates_endpoint_response(response)
 }
 
 #' Retrieves the current exchange rate for the given currency.
@@ -27,16 +27,16 @@
 #' exchange rate.
 #'
 #' @examples
-#'
 #' \donttest{
-#'   tryCatch({
-#'       ## Retrieve the current exchange rate for euros
-#'       response <- get_current_exchangerate("A", "EUR")
-#'       ## Retrieve the content
-#'       response$content
-#'     },
-#'     error = function(e) message(e)
-#'   )
+#' tryCatch(
+#'   {
+#'     ## Retrieve the current exchange rate for euros
+#'     response <- get_current_exchangerate("A", "EUR")
+#'     ## Retrieve the content
+#'     response$content
+#'   },
+#'   error = function(e) message(e)
+#' )
 #' }
 #'
 #' @seealso \url{https://api.nbp.pl/#kursyWalut}
@@ -44,13 +44,15 @@
 #' @export
 #'
 get_current_exchangerate <- function(table, currency_code) {
-    assert_character(table)
-    assert_character(currency_code)
+  assert_character(table)
+  assert_character(currency_code)
 
-    request_url <- create_request(base_url = .rates_base_url(),
-                                  path_parts = c(table, currency_code))
+  request_url <- create_request(
+    base_url = .rates_base_url(),
+    path_parts = c(table, currency_code)
+  )
 
-    .send_rates_endpoint_request(request_url)
+  .send_rates_endpoint_request(request_url)
 }
 
 #' Retrieves the last n exchange rates.
@@ -64,16 +66,16 @@ get_current_exchangerate <- function(table, currency_code) {
 #' @param n number of exchange rates to retrieve.
 #'
 #' @examples
-#'
 #' \donttest{
-#'   tryCatch({
-#'       ## Fetch the last 3 exhange rates for euros
-#'       response <- get_last_n_exchangerates("A", "EUR", 3)
-#'       ## Preview response content
-#'       response$content
-#'     },
-#'     error = function(e) message(e)
-#'   )
+#' tryCatch(
+#'   {
+#'     ## Fetch the last 3 exhange rates for euros
+#'     response <- get_last_n_exchangerates("A", "EUR", 3)
+#'     ## Preview response content
+#'     response$content
+#'   },
+#'   error = function(e) message(e)
+#' )
 #' }
 #'
 #' @return nbp_api_response object containing the last n
@@ -84,14 +86,16 @@ get_current_exchangerate <- function(table, currency_code) {
 #' @export
 #'
 get_last_n_exchangerates <- function(table, currency_code, n) {
-    assert_character(table)
-    assert_character(currency_code)
-    assert_count(n)
+  assert_character(table)
+  assert_character(currency_code)
+  assert_count(n)
 
-    request_url <- create_request(base_url = .rates_base_url(),
-                                  path_parts = c(table, currency_code, "last", n))
+  request_url <- create_request(
+    base_url = .rates_base_url(),
+    path_parts = c(table, currency_code, "last", n)
+  )
 
-    .send_rates_endpoint_request(request_url)
+  .send_rates_endpoint_request(request_url)
 }
 
 #' Retrieves the exchange rate that was published today.
@@ -107,16 +111,16 @@ get_last_n_exchangerates <- function(table, currency_code, n) {
 #' exchange rate should be fetched.
 #'
 #' @examples
-#'
 #' \donttest{
-#'   tryCatch({
-#'       ## Fetch todays A exchange rate table
-#'       response <- get_todays_exchangerate("A", "EUR")
-#'       ## Preview response content
-#'       response$content
-#'     },
-#'     error = function(e) message(e)
-#'   )
+#' tryCatch(
+#'   {
+#'     ## Fetch todays A exchange rate table
+#'     response <- get_todays_exchangerate("A", "EUR")
+#'     ## Preview response content
+#'     response$content
+#'   },
+#'   error = function(e) message(e)
+#' )
 #' }
 #'
 #' @return nbp_api_response object containing today's exchange rate.
@@ -126,18 +130,24 @@ get_last_n_exchangerates <- function(table, currency_code, n) {
 #' @export
 #'
 get_todays_exchangerate <- function(table, currency_code) {
-    assert_character(table)
-    assert_character(currency_code)
+  assert_character(table)
+  assert_character(currency_code)
 
-    assert(is.character(table),
-           "The table parameter should be a character.")
-    assert(is.character(currency_code),
-           "The currency_code parameter should be a character.")
+  assert(
+    is.character(table),
+    "The table parameter should be a character."
+  )
+  assert(
+    is.character(currency_code),
+    "The currency_code parameter should be a character."
+  )
 
-    request_url <- create_request(base_url = .rates_base_url(),
-                                  path_parts = c(table, currency_code, "today"))
+  request_url <- create_request(
+    base_url = .rates_base_url(),
+    path_parts = c(table, currency_code, "today")
+  )
 
-    .send_rates_endpoint_request(request_url)
+  .send_rates_endpoint_request(request_url)
 }
 
 #' Retrieves the exchange rate from a specific date.
@@ -157,16 +167,16 @@ get_todays_exchangerate <- function(table, currency_code) {
 #' be fetched.
 #'
 #' @examples
-#'
 #' \donttest{
-#'   tryCatch({
-#'       ## Fetch the euro exchange rate from a week ago
-#'       response <- get_exchangerate_from("A", "EUR", Sys.Date() - 7)
-#'       ## Preview response content
-#'       response$content
-#'     },
-#'     error = function(e) message(e)
-#'   )
+#' tryCatch(
+#'   {
+#'     ## Fetch the euro exchange rate from a week ago
+#'     response <- get_exchangerate_from("A", "EUR", Sys.Date() - 7)
+#'     ## Preview response content
+#'     response$content
+#'   },
+#'   error = function(e) message(e)
+#' )
 #' }
 #'
 #' @return nbp_api_response object containing the exchange rate
@@ -177,14 +187,16 @@ get_todays_exchangerate <- function(table, currency_code) {
 #' @export
 #'
 get_exchangerate_from <- function(table, currency_code, date) {
-    assert_character(table)
-    assert_character(currency_code)
-    assert_date(date)
+  assert_character(table)
+  assert_character(currency_code)
+  assert_date(date)
 
-    request_url <- create_request(base_url = .rates_base_url(),
-                                  path_parts = c(table, currency_code, as.character(date)))
+  request_url <- create_request(
+    base_url = .rates_base_url(),
+    path_parts = c(table, currency_code, as.character(date))
+  )
 
-    .send_rates_endpoint_request(request_url)
+  .send_rates_endpoint_request(request_url)
 }
 
 #' Retrieves the exchange rates from a specific interval.
@@ -203,16 +215,16 @@ get_exchangerate_from <- function(table, currency_code, date) {
 #' @param to end day of the interval.
 #'
 #' @examples
-#'
 #' \donttest{
-#'   tryCatch({
-#'       ## Fetch the exchange rate table from the past week
-#'       response <- get_exchangerate_tables_from_interval("A", Sys.Date() - 7, Sys.Date())
-#'       ## Preview response content
-#'       response$content
-#'     },
-#'     error = function(e) message(e)
-#'   )
+#' tryCatch(
+#'   {
+#'     ## Fetch the exchange rate table from the past week
+#'     response <- get_exchangerate_tables_from_interval("A", Sys.Date() - 7, Sys.Date())
+#'     ## Preview response content
+#'     response$content
+#'   },
+#'   error = function(e) message(e)
+#' )
 #' }
 #'
 #' @return nbp_api_response object containing the exchange rates
@@ -223,15 +235,19 @@ get_exchangerate_from <- function(table, currency_code, date) {
 #' @export
 #'
 get_exchangerate_from_interval <- function(table, currency_code, from, to) {
-    assert_character(table)
-    assert_character(currency_code)
-    assert_interval(from, to)
+  assert_character(table)
+  assert_character(currency_code)
+  assert_interval(from, to)
 
-    request_url <- create_request(base_url = .rates_base_url(),
-                                  path_parts = c(table,
-                                                 currency_code,
-                                                 as.character(from),
-                                                 as.character(to)))
+  request_url <- create_request(
+    base_url = .rates_base_url(),
+    path_parts = c(
+      table,
+      currency_code,
+      as.character(from),
+      as.character(to)
+    )
+  )
 
-    .send_rates_endpoint_request(request_url)
+  .send_rates_endpoint_request(request_url)
 }

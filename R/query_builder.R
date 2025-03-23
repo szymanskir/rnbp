@@ -10,11 +10,11 @@
 #' specified path parts
 #'
 create_request <- function(base_url, path_parts = NULL) {
-    for (path_part in path_parts) {
-        base_url <- add_path_part(base_url, path_part)
-    }
+  for (path_part in path_parts) {
+    base_url <- add_path_part(base_url, path_part)
+  }
 
-    add_json_format(base_url)
+  add_json_format(base_url)
 }
 
 #' Adds a path part to the given url
@@ -28,7 +28,7 @@ create_request <- function(base_url, path_parts = NULL) {
 #' @return url with the path part added
 #'
 add_path_part <- function(url, path_name) {
-    paste0(url, path_name, "/")
+  paste0(url, path_name, "/")
 }
 
 #' Adds the json formatting option to the
@@ -40,5 +40,5 @@ add_path_part <- function(url, path_name) {
 #' @return url with json format option added
 #'
 add_json_format <- function(url) {
-    paste0(url, "?format=json")
+  paste0(url, "?format=json")
 }

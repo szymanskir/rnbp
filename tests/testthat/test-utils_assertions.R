@@ -31,7 +31,8 @@ test_that("Interval assertion is working correctly", {
   from <- as.Date("2019-07-11")
   to <- as.Date("2019-07-13")
   expect_error(assert_interval(to, from),
-               regexp = "The to, from parameters should define a correct interval.")
+    regexp = "The to, from parameters should define a correct interval."
+  )
 
   expect_silent(assert_interval(from, to))
 })

@@ -53,7 +53,7 @@ knitr::kable(current_exchangerate_table)
 This data can be then easily used for plotting:
 
 ```{r, fig.height = 4, fig.width = 8, eval=FALSE}
-ggplot(current_exchangerate_table, aes(x = code, y = bid, fill = code)) + 
+ggplot(current_exchangerate_table, aes(x = code, y = bid, fill = code)) +
   geom_bar(stat = "identity")
 ```
 
@@ -77,7 +77,7 @@ dollars_data$code <- dollars_response$content$code
 currency_data <- rbind(euros_data, dollars_data)
 
 ggplot(currency_data, aes(x = effectiveDate, y = mid, col = code)) +
-  geom_line() + 
+  geom_line() +
   geom_point()
 ```
 
@@ -89,7 +89,7 @@ The API also exposes endpoints providing information regarding the gold prices c
 current_date <- Sys.Date()
 response <- get_goldprice_from_interval(current_date - 90, current_date)
 
-ggplot(response$content, aes(x = data, y = cena)) + 
+ggplot(response$content, aes(x = data, y = cena)) +
   geom_point() +
   geom_line() +
   geom_smooth()
