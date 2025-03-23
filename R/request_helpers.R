@@ -14,9 +14,13 @@ check_request <- function(response) {
   }
 }
 
+is_internet_available <- function() {
+  curl::has_internet()
+}
+
 
 send_get_request <- function(url = NULL, config = list(), ..., handle = NULL) {
-  assert(curl::has_internet(), "Request failed: there is no internet connection.")
+  assert(is_internet_available(), "Request failed: there is no internet connection.")
   response <- httr::GET(url = url, config = config, ..., handle = handle)
   check_request(response)
 }

@@ -1,5 +1,7 @@
 # rnbp (development version)
 
+* Fix bug where intervals where `from == to` would throw an error (#22)
+
 # rnbp 0.2.1
 
 * Make examples fail gracefully on API errors
