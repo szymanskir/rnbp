@@ -17,16 +17,16 @@ exchange rate table.
 Retrieves the current exchange rate table.
 }
 \examples{
-
 \donttest{
-  tryCatch({
-      ## Retrieve the current A exchange rate table
-      response <- get_current_exchangerate_table("A")
-      ## Retrieve the content
-      response$content
-    },
-    error = function(e) message(e)
-  )
+tryCatch(
+  {
+    ## Retrieve the current A exchange rate table
+    response <- get_current_exchangerate_table("A")
+    ## Retrieve the content
+    response$content
+  },
+  error = function(e) message(e)
+)
 }
 
 }

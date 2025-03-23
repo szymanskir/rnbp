@@ -14,16 +14,16 @@ gold price.
 Retrieves the current gold price.
 }
 \examples{
-
 \donttest{
-  tryCatch({
-      ## Fetch the current gold price
-      response <- get_current_goldprice()
-      ## Retrieve the current gold price value
-      response$content$cena
-    },
-    error = function(e) message(e)
-  )
+tryCatch(
+  {
+    ## Fetch the current gold price
+    response <- get_current_goldprice()
+    ## Retrieve the current gold price value
+    response$content$cena
+  },
+  error = function(e) message(e)
+)
 }
 
 }
@@ -31,8 +31,8 @@ Retrieves the current gold price.
 \url{https://api.nbp.pl/#cenyZlota}
 
 Other goldprice: 
-\code{\link{get_goldprice_from_interval}()},
 \code{\link{get_goldprice_from}()},
+\code{\link{get_goldprice_from_interval}()},
 \code{\link{get_last_n_goldprices}()},
 \code{\link{get_todays_goldprice}()}
 }

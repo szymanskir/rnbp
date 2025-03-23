@@ -21,16 +21,16 @@ return a 404 Not found error. In that case the function will
 return an error with an appropriate message.
 }
 \examples{
-
 \donttest{
-  tryCatch({
-      ## Fetch todays A exchange rate table
-      response <- get_todays_exchangerate_table("A")
-      ## Preview response content
-      response$content
-    },
-    error = function(e) message(e)
-  )
+tryCatch(
+  {
+    ## Fetch todays A exchange rate table
+    response <- get_todays_exchangerate_table("A")
+    ## Preview response content
+    response$content
+  },
+  error = function(e) message(e)
+)
 }
 
 }

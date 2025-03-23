@@ -24,16 +24,16 @@ fetching values from an interval containing a weekend will
 result in a response that omits those days.
 }
 \examples{
-
 \donttest{
-  tryCatch({
-      ## Fetch the gold prices from the past week
-      response <- get_goldprice_from_interval(Sys.Date() - 7, Sys.Date())
-      ## Preview response content
-      response$content
-    },
-    error = function(e) message(e)
-  )
+tryCatch(
+  {
+    ## Fetch the gold prices from the past week
+    response <- get_goldprice_from_interval(Sys.Date() - 7, Sys.Date())
+    ## Preview response content
+    response$content
+  },
+  error = function(e) message(e)
+)
 }
 
 }

@@ -21,16 +21,16 @@ exchange rate.
 Retrieves the current exchange rate for the given currency.
 }
 \examples{
-
 \donttest{
-  tryCatch({
-      ## Retrieve the current exchange rate for euros
-      response <- get_current_exchangerate("A", "EUR")
-      ## Retrieve the content
-      response$content
-    },
-    error = function(e) message(e)
-  )
+tryCatch(
+  {
+    ## Retrieve the current exchange rate for euros
+    response <- get_current_exchangerate("A", "EUR")
+    ## Retrieve the content
+    response$content
+  },
+  error = function(e) message(e)
+)
 }
 
 }
@@ -38,8 +38,8 @@ Retrieves the current exchange rate for the given currency.
 \url{https://api.nbp.pl/#kursyWalut}
 
 Other rates: 
-\code{\link{get_exchangerate_from_interval}()},
 \code{\link{get_exchangerate_from}()},
+\code{\link{get_exchangerate_from_interval}()},
 \code{\link{get_last_n_exchangerates}()},
 \code{\link{get_todays_exchangerate}()}
 }

@@ -23,16 +23,16 @@ exchange rates.
 Retrieves the last n exchange rates.
 }
 \examples{
-
 \donttest{
-  tryCatch({
-      ## Fetch the last 3 exhange rates for euros
-      response <- get_last_n_exchangerates("A", "EUR", 3)
-      ## Preview response content
-      response$content
-    },
-    error = function(e) message(e)
-  )
+tryCatch(
+  {
+    ## Fetch the last 3 exhange rates for euros
+    response <- get_last_n_exchangerates("A", "EUR", 3)
+    ## Preview response content
+    response$content
+  },
+  error = function(e) message(e)
+)
 }
 
 }
@@ -41,8 +41,8 @@ Retrieves the last n exchange rates.
 
 Other rates: 
 \code{\link{get_current_exchangerate}()},
-\code{\link{get_exchangerate_from_interval}()},
 \code{\link{get_exchangerate_from}()},
+\code{\link{get_exchangerate_from_interval}()},
 \code{\link{get_todays_exchangerate}()}
 }
 \concept{rates}
