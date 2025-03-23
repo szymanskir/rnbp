@@ -30,16 +30,16 @@ error. In those cases the function returns an error with an
 appropriate message.
 }
 \examples{
-
 \donttest{
-  tryCatch({
-      ## Fetch the euro exchange rate from a week ago
-      response <- get_exchangerate_from("A", "EUR", Sys.Date() - 7)
-      ## Preview response content
-      response$content
-    },
-    error = function(e) message(e)
-  )
+tryCatch(
+  {
+    ## Fetch the euro exchange rate from a week ago
+    response <- get_exchangerate_from("A", "EUR", Sys.Date() - 7)
+    ## Preview response content
+    response$content
+  },
+  error = function(e) message(e)
+)
 }
 
 }

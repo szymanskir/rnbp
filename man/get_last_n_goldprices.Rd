@@ -17,16 +17,16 @@ gold prices.
 Retrieves the last n gold prices.
 }
 \examples{
-
 \donttest{
-  tryCatch({
-      ## Fetch the last 3 gold price values
-      response <- get_last_n_goldprices(3)
-      ## Preview response content
-      response$content
-    },
-    error = function(e) message(e)
-  )
+tryCatch(
+  {
+    ## Fetch the last 3 gold price values
+    response <- get_last_n_goldprices(3)
+    ## Preview response content
+    response$content
+  },
+  error = function(e) message(e)
+)
 }
 
 }
@@ -35,8 +35,8 @@ Retrieves the last n gold prices.
 
 Other goldprice: 
 \code{\link{get_current_goldprice}()},
-\code{\link{get_goldprice_from_interval}()},
 \code{\link{get_goldprice_from}()},
+\code{\link{get_goldprice_from_interval}()},
 \code{\link{get_todays_goldprice}()}
 }
 \concept{goldprice}

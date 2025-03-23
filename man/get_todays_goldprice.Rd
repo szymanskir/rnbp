@@ -18,16 +18,16 @@ return a 404 Not found error. In that case the function will
 return an error with an appropriate message.
 }
 \examples{
-
 \donttest{
-  tryCatch({
-      ## Fetch todays gold price
-      response <- get_todays_goldprice()
-      ## Preview response content
-      response$content
-    },
-    error = function(e) message(e)
-  )
+tryCatch(
+  {
+    ## Fetch todays gold price
+    response <- get_todays_goldprice()
+    ## Preview response content
+    response$content
+  },
+  error = function(e) message(e)
+)
 }
 
 }
@@ -36,8 +36,8 @@ return an error with an appropriate message.
 
 Other goldprice: 
 \code{\link{get_current_goldprice}()},
-\code{\link{get_goldprice_from_interval}()},
 \code{\link{get_goldprice_from}()},
+\code{\link{get_goldprice_from_interval}()},
 \code{\link{get_last_n_goldprices}()}
 }
 \concept{goldprice}
