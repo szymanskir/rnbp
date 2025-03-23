@@ -36,3 +36,10 @@ test_that("Interval assertion is working correctly", {
 
   expect_silent(assert_interval(from, to))
 })
+
+test_that("Interval assetion should pass when from == to", {
+  from <- as.Date("2019-07-11")
+  to <- as.Date("2019-07-11")
+
+  expect_silent(assert_interval(from, to))
+})
